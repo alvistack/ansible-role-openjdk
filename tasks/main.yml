@@ -18,6 +18,15 @@
   include_vars: "{{ ansible_distribution_release }}.yml"
   tags: java
 
+- name: apt-get install
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+    - { state: "latest", name: "ca-certificates" }
+    - { state: "latest", name: "python-software-properties" }
+  tags: java
+
 - name: apt-add-repository
   apt_repository:
     repo: "{{ item.repo }}"
