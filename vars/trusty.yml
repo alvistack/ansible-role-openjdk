@@ -14,28 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: include release specific variables
-  include_vars: "{{ ansible_distribution_release }}.yml"
-  tags: java
-
-- name: apt-add-repository
-  apt_repository:
-    repo: "{{ item.repo }}"
-    state: "{{ item.state }}"
-  with_items: "{{ _apt_repository }}"
-  tags: java
-
-- name: auto accept license
-  debconf:
-    name: "oracle-java8-installer"
-    question: "shared/accepted-oracle-license-v1-1"
-    vtype: "select"
-    value: "true"
-  tags: java
-
-- name: apt-get install
-  apt:
-    name: "{{ item.name }}"
-    state: "{{ item.state }}"
-  with_items: "{{ _apt }}"
-  tags: java
+_apt_repository: [
+  { state: "present", repo: "ppa:webupd8team/java" },
+]
+_apt: [
+  { state: "latest", name: "oracle-java8-installer" },
+  { state: "latest", name: "oracle-java8-set-default" },
+]
