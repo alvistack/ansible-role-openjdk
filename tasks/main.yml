@@ -15,16 +15,15 @@
 # limitations under the License.
 
 - name: include release specific variables
-  include_vars: "{{ ansible_distribution_release }}.yml"
-  tags: java
-
-- name: apt-get install
-  apt:
-    name: "{{ item.name }}"
-    state: "{{ item.state }}"
-  with_items:
-    - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "python-software-properties" }
+  include_vars: "{{ loop_var }}"
+  with_first_found:
+    - "{{ ansible_distribution | lower }}-{{ ansible_distribution_version | lower }}.yml"
+    - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
+    - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
+    - "{{ ansible_distribution | lower }}.yml"
+    - "{{ ansible_os_family | lower }}.yml"
+  loop_control:
+    loop_var: "loop_var"
   tags: java
 
 - name: apt-add-repository

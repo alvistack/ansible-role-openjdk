@@ -17,4 +17,6 @@
 - hosts: all
   remote_user: root
   roles:
-    - ansible-role-java
+    - role: ansible-role-python
+    - role: ansible-role-apt
+    - role: ansible-role-java
