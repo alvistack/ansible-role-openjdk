@@ -21,3 +21,6 @@ _apt: [
   { state: "latest", name: "oracle-java8-installer" },
   { state: "latest", name: "oracle-java8-set-default" },
 ]
+_debconf: [
+  { name: "oracle-java8-installer", question: "shared/accepted-oracle-license-v1-1", vtype: "select", value: "true" },
+]

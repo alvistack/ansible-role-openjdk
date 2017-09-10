@@ -14,13 +14,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt_repository: [
-  { state: "present", repo: "ppa:webupd8team/java" },
-]
-_apt: [
-  { state: "latest", name: "oracle-java8-installer" },
-  { state: "latest", name: "oracle-java8-set-default" },
-]
-_debconf: [
-  { name: "oracle-java8-installer", question: "shared/accepted-oracle-license-v1-1", vtype: "select", value: "true" },
-]
+- name: apt-add-repository
+  apt_repository:
+    repo: "{{ item.repo }}"
+    state: "{{ item.state }}"
+  with_items: "{{ _apt_repository }}"
+  tags: java
+
+- name: auto accept license
+  debconf:
+    name: "{{ item.name }}"
+    question: "{{ item.question }}"
+    vtype: "{{ item.vtype }}"
+    value: "{{ item.value }}"
+  with_items: "{{ _debconf }}"
+  tags: java
+
+- name: apt-get update
+  apt:
+    cache_valid_time: "3600"
+    update_cache: "yes"
+  tags: java
+
+- name: apt-get install
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items: "{{ _apt }}"
+  tags: java
