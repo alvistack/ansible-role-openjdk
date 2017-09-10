@@ -28,31 +28,16 @@
     loop_var: "loop_var"
   tags: java
 
-- name: apt-add-repository
-  apt_repository:
-    repo: "{{ item.repo }}"
-    state: "{{ item.state }}"
-  with_items: "{{ _apt_repository }}"
-  register: apt_repository_result
-  tags: java
-
-- name: auto accept license
-  debconf:
-    name: "oracle-java8-installer"
-    question: "shared/accepted-oracle-license-v1-1"
-    vtype: "select"
-    value: "true"
-  tags: java
-
-- name: apt-get update
-  apt:
-    cache_valid_time: "3600"
-    update_cache: "yes"
-  tags: java
-
-- name: apt-get install
-  apt:
-    name: "{{ item.name }}"
-    state: "{{ item.state }}"
-  with_items: "{{ _apt }}"
+- name: include release specific tasks
+  include: "{{ loop_var }}"
+  with_first_found:
+    - files:
+        - "{{ ansible_distribution | lower }}-{{ ansible_distribution_version | lower }}.yml"
+        - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
+        - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
+        - "{{ ansible_distribution | lower }}.yml"
+        - "{{ ansible_os_family | lower }}.yml"
+      skip: "yes"
+  loop_control:
+    loop_var: "loop_var"
   tags: java
