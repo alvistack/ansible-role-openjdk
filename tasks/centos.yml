@@ -14,21 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-galaxy_info:
-  author: Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
-  description: Ansible Role for Oracle Java Installation.
-  company: PantaRei Design
-  license: Apache License 2.0
-  min_ansible_version: 2.3
-  platforms:
-    - name: Ubuntu
-      versions:
-        - trusty
-        - xenial
-    - name: EL
-      versions:
-        - 6
-        - 7
-  galaxy_tags:
-    - system
-dependencies: []
+- name: download archive:
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+    headers: "{{ item.headers }}"
+  with_items: "{{ _get_url }}"
+  tags: java
+
+- name: yum -y localinstall
+  yum:
+    name: "{{ item.dest }}"
+    state: "present"
+  with_items: "{{ _get_url }}"
+  tags: java
