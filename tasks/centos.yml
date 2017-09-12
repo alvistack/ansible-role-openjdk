@@ -34,6 +34,7 @@
     dest: "{{ item.dest }}"
     state: "absent"
   with_items: "{{ _get_url }}"
+  changed_when: false
   tags: java
 
 - name: flush yum cache
