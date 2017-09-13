@@ -14,27 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: download archive
-  get_url:
-    url: "{{ item.url }}"
-    dest: "{{ item.dest }}"
-    headers: "{{ item.headers }}"
-  with_items: "{{ _get_url }}"
-  tags: java
-
-- name: yum -y localinstall
-  yum:
-    name: "{{ item.dest }}"
-    state: "present"
-  with_items: "{{ _get_url }}"
-  tags: java
-
-- name: flush download archive
-  file:
-    dest: "{{ item.dest }}"
-    state: "absent"
-  with_items: "{{ _get_url }}"
-  changed_when: false
+- name: download and install java
+  shell: |
+    ARCHIVE="`mktemp -u`.rpm"
+    curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ _java_archive_url }} > $ARCHIVE
+    yum -y localinstall $ARCHIVE
+    rm -rf $ARCHIVE
+  args:
+    creates: "/usr/bin/java"
   tags: java
 
 - name: flush yum cache
