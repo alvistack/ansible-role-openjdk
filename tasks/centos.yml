@@ -28,3 +28,20 @@
     state: "present"
   with_items: "{{ _get_url }}"
   tags: java
+
+- name: flush download archive
+  file:
+    dest: "{{ item.dest }}"
+    state: "absent"
+  with_items: "{{ _get_url }}"
+  changed_when: false
+  tags: java
+
+- name: flush yum cache
+  file:
+    dest: "{{ item.dest }}"
+    state: "{{ item.state }}"
+  with_items:
+    - { state: "absent", dest: "/var/cache/yum" }
+  changed_when: false
+  tags: java
