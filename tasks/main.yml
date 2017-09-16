@@ -15,9 +15,7 @@
 # limitations under the License.
 
 - name: include release specific variables
-  include_vars:
-    file: "{{ loop_var }}"
-    dir: "vars"
+  include_vars: "{{ loop_var }}"
   with_first_found:
     - files:
         - "{{ ansible_distribution | lower }}-{{ ansible_distribution_version | lower }}.yml"
@@ -25,6 +23,7 @@
         - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
         - "{{ ansible_distribution | lower }}.yml"
         - "{{ ansible_os_family | lower }}.yml"
+      paths: "../vars"
       skip: "yes"
   loop_control:
     loop_var: "loop_var"
@@ -39,6 +38,7 @@
         - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
         - "{{ ansible_distribution | lower }}.yml"
         - "{{ ansible_os_family | lower }}.yml"
+      paths: "."
       skip: "yes"
   loop_control:
     loop_var: "loop_var"
