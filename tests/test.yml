@@ -25,3 +25,12 @@
   roles:
     - role: ansible-role-apt
     - role: ansible-role-java
+
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: java -version
+      shell: |
+        java -version
+      register: java_version_result
+      changed_when: java_version_result.rc != 0

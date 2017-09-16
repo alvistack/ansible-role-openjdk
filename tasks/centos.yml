@@ -17,7 +17,7 @@
 - name: download and install java
   shell: |
     ARCHIVE="`mktemp -u`.rpm"
-    curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ _java_archive_url }} > $ARCHIVE
+    curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} > $ARCHIVE
     yum -y localinstall $ARCHIVE
     rm -rf $ARCHIVE
   args:
