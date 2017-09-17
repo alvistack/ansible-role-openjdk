@@ -24,6 +24,16 @@
     creates: "/usr/bin/java"
   tags: java
 
+- name: create /etc/profile.d/java.sh
+  lineinfile:
+    path: "/etc/profile.d/java.sh"
+    regexp: "^export JAVA_HOME="
+    line: "export JAVA_HOME=/usr/java/default"
+    insertafter: "EOF"
+    state: "present"
+    create: "yes"
+  tags: java
+
 - name: apt-get -y clean
   shell: |
     apt-get -y clean
