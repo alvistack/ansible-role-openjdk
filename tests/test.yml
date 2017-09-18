@@ -35,3 +35,9 @@
         java -version
       register: java_version_result
       changed_when: java_version_result.rc != 0
+
+    - name: su -s /bin/bash -c 'echo $JAVA_HOME'
+      shell: |
+        su -s /bin/bash -c 'echo $JAVA_HOME'
+      register: java_home_result
+      changed_when: java_home_result.rc != 0
