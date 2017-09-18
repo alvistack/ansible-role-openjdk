@@ -24,6 +24,16 @@
     creates: "/usr/bin/java"
   tags: java
 
+- name: update /etc/environment
+  lineinfile:
+    path: "/etc/environment"
+    regexp: "^JAVA_HOME="
+    line: "JAVA_HOME=\"/usr/java/default\""
+    insertafter: "EOF"
+    state: "present"
+    create: "yes"
+  tags: java
+
 - name: flush yum cache
   file:
     dest: "{{ item.dest }}"

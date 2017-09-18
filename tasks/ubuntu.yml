@@ -24,11 +24,11 @@
     creates: "/usr/bin/java"
   tags: java
 
-- name: create /etc/profile.d/java.sh
+- name: update /etc/environment
   lineinfile:
-    path: "/etc/profile.d/java.sh"
-    regexp: "^export JAVA_HOME="
-    line: "export JAVA_HOME=/usr/java/default"
+    path: "/etc/environment"
+    regexp: "^JAVA_HOME="
+    line: "JAVA_HOME=\"/usr/java/default\""
     insertafter: "EOF"
     state: "present"
     create: "yes"
