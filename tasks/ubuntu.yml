@@ -20,8 +20,6 @@
     curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} > $ARCHIVE
     alien -i -k --scripts $ARCHIVE
     rm -rf $ARCHIVE
-  args:
-    creates: "/usr/bin/java"
   tags: java
 
 - name: update /etc/environment
