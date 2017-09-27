@@ -1,7 +1,7 @@
 Ansible Role for Java
 =====================
 
-[![Build Status](https://travis-ci.org/alvistack/ansible-role-java.svg?branch=master)](https://travis-ci.org/alvistack/ansible-role-java)
+[![Travis](https://img.shields.io/travis/alvistack/ansible-role-java.svg)](https://travis-ci.org/alvistack/ansible-role-java)
 [![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-java.svg)](https://github.com/alvistack/ansible-role-java)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-java.svg)](https://github.com/alvistack/ansible-role-java/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.java-blue.svg)](https://galaxy.ansible.com/alvistack/java)
