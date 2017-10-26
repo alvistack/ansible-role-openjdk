@@ -16,7 +16,7 @@
 
 - name: download and install java
   shell: |
-    ARCHIVE="`mktemp -u`.rpm"
+    ARCHIVE="`mktemp --suffix=.rpm`"
     curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} > $ARCHIVE
     alien -i -k --scripts $ARCHIVE
     rm -rf $ARCHIVE
