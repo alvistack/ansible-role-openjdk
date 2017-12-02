@@ -14,6 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: yum install
+  yum:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items: "{{ _yum }}"
+  tags: java
+
 - name: download and install java
   shell: |
     ARCHIVE="`mktemp --suffix=.rpm`"
@@ -34,11 +41,8 @@
     create: "yes"
   tags: java
 
-- name: flush yum cache
-  file:
-    dest: "{{ item.dest }}"
-    state: "{{ item.state }}"
-  with_items:
-    - { state: "absent", dest: "/var/cache/yum" }
+- name: yum -y clean all
+  shell: |
+    yum -y clean all
   changed_when: false
   tags: java
