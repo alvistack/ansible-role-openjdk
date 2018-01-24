@@ -14,6 +14,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: apt-get update
+  apt:
+    update_cache: "yes"
+  changed_when: false
+  tags: java
+
+- name: apt-get install
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items: "{{ _apt }}"
+  tags: java
+
 - name: download and install java
   shell: |
     ARCHIVE="`mktemp --suffix=.rpm`"
@@ -37,5 +50,19 @@
 - name: apt-get -y clean
   shell: |
     apt-get -y clean
+  changed_when: false
+  tags: java
+
+- name: flush apt lists cache
+  file:
+    dest: "{{ item.dest }}"
+    state: "{{ item.state }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
+  with_items:
+    - { state: "absent", dest: "/var/lib/apt/lists", owner: "root", group: "root", mode: "0755" }
+    - { state: "directory", dest: "/var/lib/apt/lists", owner: "root", group: "root", mode: "0755" }
+    - { state: "touch", dest: "/var/lib/apt/lists/lock", owner: "root", group: "root", mode: "0640" }
   changed_when: false
   tags: java

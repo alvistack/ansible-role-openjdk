@@ -26,8 +26,6 @@
     - role: ansible-role-apt
     - role: ansible-role-yum
     - role: ansible-role-java
-      # URL for download Oracle Java RPM.
-      java_url: "http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd3019491ca4f6ddbe78cdb6d0/jdk-8u152-linux-x64.rpm"
 
 - hosts: all
   remote_user: root
