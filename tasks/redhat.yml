@@ -24,7 +24,7 @@
 - name: download and install java
   shell: |
     ARCHIVE="`mktemp --suffix=.rpm`"
-    curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} > $ARCHIVE
+    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} > $ARCHIVE
     yum -y localinstall $ARCHIVE
     rm -rf $ARCHIVE
   args:
@@ -33,16 +33,12 @@
 
 - name: update /etc/environment
   lineinfile:
-    path: "/etc/environment"
-    regexp: "^JAVA_HOME="
-    line: "JAVA_HOME=\"/usr/java/default\""
+    path: "{{ item.path }}"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
     insertafter: "EOF"
     state: "present"
     create: "yes"
-  tags: java
-
-- name: yum -y clean all
-  shell: |
-    yum -y clean all
-  changed_when: false
+  with_items:
+    - { path: "/etc/environment", regexp: "^JAVA_HOME=", line: "JAVA_HOME=\"/usr/java/default\"" }
   tags: java

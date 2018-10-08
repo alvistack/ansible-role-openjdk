@@ -29,8 +29,9 @@
 
 - name: download and install java
   shell: |
+    ln -s /usr/bin/update-alternatives /usr/sbin/alternatives
     ARCHIVE="`mktemp --suffix=.rpm`"
-    curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} > $ARCHIVE
+    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} > $ARCHIVE
     alien -i -k --scripts $ARCHIVE
     rm -rf $ARCHIVE
   args:
@@ -39,30 +40,12 @@
 
 - name: update /etc/environment
   lineinfile:
-    path: "/etc/environment"
-    regexp: "^JAVA_HOME="
-    line: "JAVA_HOME=\"/usr/java/default\""
+    path: "{{ item.path }}"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
     insertafter: "EOF"
     state: "present"
     create: "yes"
-  tags: java
-
-- name: apt-get -y clean
-  shell: |
-    apt-get -y clean
-  changed_when: false
-  tags: java
-
-- name: flush apt lists cache
-  file:
-    dest: "{{ item.dest }}"
-    state: "{{ item.state }}"
-    owner: "{{ item.owner }}"
-    group: "{{ item.group }}"
-    mode: "{{ item.mode }}"
   with_items:
-    - { state: "absent", dest: "/var/lib/apt/lists", owner: "root", group: "root", mode: "0755" }
-    - { state: "directory", dest: "/var/lib/apt/lists", owner: "root", group: "root", mode: "0755" }
-    - { state: "touch", dest: "/var/lib/apt/lists/lock", owner: "root", group: "root", mode: "0640" }
-  changed_when: false
+    - { path: "/etc/environment", regexp: "^JAVA_HOME=", line: "JAVA_HOME=\"/usr/java/default\"" }
   tags: java
