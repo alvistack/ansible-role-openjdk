@@ -38,7 +38,7 @@
     creates: "/usr/bin/java"
   tags: java
 
-- name: update /etc/environment
+- name: update /etc/profile.d/java.sh
   lineinfile:
     path: "{{ item.path }}"
     regexp: "{{ item.regexp }}"
@@ -47,5 +47,5 @@
     state: "present"
     create: "yes"
   with_items:
-    - { path: "/etc/environment", regexp: "^JAVA_HOME=", line: "JAVA_HOME=\"/usr/java/default\"" }
+    - { path: "/etc/profile.d/java.sh", regexp: "^export JAVA_HOME=", line: "export JAVA_HOME=/usr/java/default" }
   tags: java
