@@ -6,7 +6,7 @@ Ansible Role for Java
 
 ### Major Changes
 
--   Upgrde Jave to 8u181-b13
+-   Upgrde Jave to 8u191-b12
 -   Upgrade Ansible support to 2.6 or higher
 -   Remove Ubuntu 14.04 support
 -   Add Ubuntu 18.04 support
