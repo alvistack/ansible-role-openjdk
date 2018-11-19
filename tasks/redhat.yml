@@ -30,15 +30,3 @@
   args:
     creates: "/usr/bin/java"
   tags: java
-
-- name: update /etc/profile.d/java.sh
-  lineinfile:
-    path: "{{ item.path }}"
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-    insertafter: "EOF"
-    state: "present"
-    create: "yes"
-  with_items:
-    - { path: "/etc/profile.d/java.sh", regexp: "^export JAVA_HOME=", line: "export JAVA_HOME=/usr/java/default" }
-  tags: java
