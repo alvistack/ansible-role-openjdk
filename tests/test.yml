@@ -39,7 +39,7 @@
 
     - name: echo $JAVA_HOME
       shell: |
-        . /etc/profile.d/java.sh
+        . /etc/profile
         echo $JAVA_HOME
       register: java_home_result
       changed_when: java_home_result.rc != 0

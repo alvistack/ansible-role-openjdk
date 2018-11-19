@@ -6,7 +6,7 @@
 
   - CI with ansible-lint and galaxy-lint-rules
   - Create `/etc/profile.d/java.sh` with templates
-  - Source `/etc/profile.d/java.sh` for environment variables
+  - Source `/etc/profile` for environment variables
   - Use shell only when shell functionality is required
 
 ## 2.0.0 - 2018-10-25
