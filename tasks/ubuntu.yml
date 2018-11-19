@@ -14,12 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: apt-get update
-  apt:
-    update_cache: "yes"
-  changed_when: false
-  tags: java
-
 - name: apt-get install
   apt:
     name: "{{ item.name }}"
@@ -29,23 +23,11 @@
 
 - name: download and install java
   shell: |
-    ln -s /usr/bin/update-alternatives /usr/sbin/alternatives
     ARCHIVE="`mktemp --suffix=.rpm`"
-    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} > $ARCHIVE
+    ln -s /usr/bin/update-alternatives /usr/sbin/alternatives
+    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} -o $ARCHIVE
     alien -i -k --scripts $ARCHIVE
     rm -rf $ARCHIVE
   args:
     creates: "/usr/bin/java"
-  tags: java
-
-- name: update /etc/profile.d/java.sh
-  lineinfile:
-    path: "{{ item.path }}"
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-    insertafter: "EOF"
-    state: "present"
-    create: "yes"
-  with_items:
-    - { path: "/etc/profile.d/java.sh", regexp: "^export JAVA_HOME=", line: "export JAVA_HOME=/usr/java/default" }
   tags: java

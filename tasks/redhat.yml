@@ -24,21 +24,9 @@
 - name: download and install java
   shell: |
     ARCHIVE="`mktemp --suffix=.rpm`"
-    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} > $ARCHIVE
+    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} -o $ARCHIVE
     yum -y localinstall $ARCHIVE
     rm -rf $ARCHIVE
   args:
     creates: "/usr/bin/java"
-  tags: java
-
-- name: update /etc/profile.d/java.sh
-  lineinfile:
-    path: "{{ item.path }}"
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-    insertafter: "EOF"
-    state: "present"
-    create: "yes"
-  with_items:
-    - { path: "/etc/profile.d/java.sh", regexp: "^export JAVA_HOME=", line: "export JAVA_HOME=/usr/java/default" }
   tags: java

@@ -43,3 +43,14 @@
   loop_control:
     loop_var: "loop_var"
   tags: java
+
+- name: copy templates
+  template:
+    src: "./templates{{ item.dest }}.j2"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+  with_items:
+    - { dest: "/etc/profile.d/java.sh" }
+  tags: java
