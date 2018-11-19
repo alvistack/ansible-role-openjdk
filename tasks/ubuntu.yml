@@ -23,9 +23,9 @@
 
 - name: download and install java
   shell: |
-    ln -s /usr/bin/update-alternatives /usr/sbin/alternatives
     ARCHIVE="`mktemp --suffix=.rpm`"
-    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} > $ARCHIVE
+    ln -s /usr/bin/update-alternatives /usr/sbin/alternatives
+    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} -o $ARCHIVE
     alien -i -k --scripts $ARCHIVE
     rm -rf $ARCHIVE
   args:
