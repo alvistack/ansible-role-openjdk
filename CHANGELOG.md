@@ -9,6 +9,7 @@
   - Source environment variables with `su -l -s /bin/bash -c`
   - Use shell only when shell functionality is required
   - Replace tests from Docker to LXD
+  - Reduce kernel logging level during CI
 
 ## 2.0.0 - 2018-10-25
 
