@@ -19,6 +19,8 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items: "{{ _yum }}"
+  register: result
+  until: result is succeeded
   tags: java
 
 - name: download and install java
@@ -29,4 +31,6 @@
     rm -rf $ARCHIVE
   args:
     creates: "/usr/bin/java"
+  register: result
+  until: result is succeeded
   tags: java
