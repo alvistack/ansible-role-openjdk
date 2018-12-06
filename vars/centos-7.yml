@@ -14,9 +14,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_yum: [
-  { state: "latest", name: "curl" },
-  { state: "latest", name: "yum" },
-]
-
 _java_url: "https://download.oracle.com/otn-pub/java/jdk/11.0.1+13/90cf5d8f270a4347a95050320eef3fb7/jdk-11.0.1_linux-x64_bin.rpm"

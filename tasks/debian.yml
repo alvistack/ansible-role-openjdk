@@ -18,7 +18,9 @@
   apt:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  with_items: "{{ _apt }}"
+  with_items:
+    - { state: "latest", name: "curl" }
+    - { state: "latest", name: "alien" }
   register: result
   until: result is succeeded
   tags: java
