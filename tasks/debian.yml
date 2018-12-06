@@ -27,7 +27,7 @@
   shell: |
     ARCHIVE="`mktemp --suffix=.rpm`"
     ln -s /usr/bin/update-alternatives /usr/sbin/alternatives
-    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url }} -o $ARCHIVE
+    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url or _java_url }} -o $ARCHIVE
     alien -i -k --scripts $ARCHIVE
     rm -rf $ARCHIVE
   args:
