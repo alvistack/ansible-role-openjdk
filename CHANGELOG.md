@@ -1,15 +1,20 @@
 # Ansible Role for Java
 
-## 2.1.0 - TBC
+## 2.2.0 - TBC
 
 ### Major Changes
 
-  - CI with ansible-lint and galaxy-lint-rules
-  - Create `/etc/profile.d/java.sh` with templates
-  - Source environment variables with `su -l -s /bin/bash -c`
+## 2.1.0 - 2018-12-06
+
+### Major Changes
+
+  - CI with yamllint, ansible-lint and ansible-playbook --syntax-check
+  - CI with LXD, improve systemd support
   - Use shell only when shell functionality is required
-  - Replace tests from Docker to LXD
-  - Optionally override JDK version with defaults/main.yml
+  - Template `/etc/profile.d/java.sh` for environment variables
+  - Source environment variables with `su -l -s /bin/bash -c`
+  - Default install Oracle Java JRE 8u191-b12
+  - Support override with defaults/main.yml
 
 ## 2.0.0 - 2018-10-25
 
