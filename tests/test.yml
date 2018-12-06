@@ -44,4 +44,4 @@
         warn: false
       register: result
       changed_when: result is not succeeded
-      failed_when: "'/usr/java/default' not in result.stdout"
+      failed_when: "'/usr/lib/jvm' not in result.stdout"

@@ -4,6 +4,9 @@
 
 ### Major Changes
 
+  - Default install OpenJDK 8 on Ubuntu 16.04 and CentOS 6
+  - Default install OpenJDK 11 on Ubuntu 18.04 and CentOS 7
+
 ## 2.1.0 - 2018-12-06
 
 ### Major Changes

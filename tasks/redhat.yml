@@ -18,19 +18,7 @@
   yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  with_items: "{{ _yum }}"
-  register: result
-  until: result is succeeded
-  tags: java
-
-- name: download and install java
-  shell: |
-    ARCHIVE="`mktemp --suffix=.rpm`"
-    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_url or _java_url }} -o $ARCHIVE
-    yum -y localinstall $ARCHIVE
-    rm -rf $ARCHIVE
-  args:
-    creates: "/usr/bin/java"
+  with_items: "{{ yum }}"
   register: result
   until: result is succeeded
   tags: java

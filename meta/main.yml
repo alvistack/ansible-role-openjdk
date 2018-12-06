@@ -17,7 +17,7 @@
 galaxy_info:
   role_name: java
   author: Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
-  description: Ansible Role for Oracle Java Installation
+  description: Ansible Role for OpenJDK Installation
   company: PantaRei Design
   license: Apache License 2.0
   min_ansible_version: 2.6
