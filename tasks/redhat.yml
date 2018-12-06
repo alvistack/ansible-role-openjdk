@@ -18,9 +18,7 @@
   yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  with_items:
-    - { state: "latest", name: "curl" }
-    - { state: "latest", name: "yum" }
+  with_items: "{{ _yum }}"
   register: result
   until: result is succeeded
   tags: java
