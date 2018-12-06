@@ -9,8 +9,6 @@
   - Source environment variables with `su -l -s /bin/bash -c`
   - Use shell only when shell functionality is required
   - Replace tests from Docker to LXD
-  - Default install JDK 8 on Ubuntu 16.04 and CentOS 6
-  - Default install JDK 11 on Ubuntu 18.04 and CentOS 7
   - Optionally override JDK version with defaults/main.yml
 
 ## 2.0.0 - 2018-10-25
