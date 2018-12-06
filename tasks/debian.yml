@@ -18,20 +18,7 @@
   apt:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  with_items: "{{ _apt }}"
-  register: result
-  until: result is succeeded
-  tags: java
-
-- name: download and install java
-  shell: |
-    ARCHIVE="`mktemp --suffix=.rpm`"
-    ln -s /usr/bin/update-alternatives /usr/sbin/alternatives
-    curl -skL -j -H "Cookie: oraclelicense=accept-securebackup-cookie" {{ java_download_url or _java_download_url }} -o $ARCHIVE
-    alien -i -k --scripts $ARCHIVE
-    rm -rf $ARCHIVE
-  args:
-    creates: "/usr/bin/java"
+  with_items: "{{ apt }}"
   register: result
   until: result is succeeded
   tags: java

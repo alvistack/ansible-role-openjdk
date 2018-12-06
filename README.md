@@ -5,7 +5,7 @@
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-java.svg)](https://github.com/alvistack/ansible-role-java/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.java-blue.svg)](https://galaxy.ansible.com/alvistack/java)
 
-Ansible Role for Oracle Java Installation.
+Ansible Role for OpenJDK Installation.
 
 ## Requirements
 
