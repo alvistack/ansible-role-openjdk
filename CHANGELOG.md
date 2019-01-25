@@ -1,6 +1,10 @@
 # Ansible Role for Java
 
-## 2.2.0 - TBC
+## 2.3.0 - TBC
+
+### Major Changes
+
+## 2.2.0 - 2019-01-25
 
 ### Major Changes
 
