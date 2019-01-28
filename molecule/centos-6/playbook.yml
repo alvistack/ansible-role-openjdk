@@ -14,19 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Use `gather_faces: no` to initialize Python on system that not yet
-# pre-installed with Python (e.g. Ubuntu 16.04 Cloud Image and Docker Image).
-- hosts: all
-  remote_user: root
-  gather_facts: no
-  roles:
-    - role: python
-
 - hosts: all
   remote_user: root
   roles:
-    - role: apt
-    - role: yum
     - role: java
 
 - hosts: all
@@ -38,8 +28,7 @@
       changed_when: result is not succeeded
 
     - name: su -l -s /bin/bash -c 'echo $JAVA_HOME'
-      shell: |
-        su -l -s /bin/bash -c 'echo $JAVA_HOME'
+      command: su -l -s /bin/bash -c 'echo $JAVA_HOME'
       args:
         warn: false
       register: result
