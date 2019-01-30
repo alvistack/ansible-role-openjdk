@@ -1,6 +1,16 @@
 # Ansible Role for Java
 
-## 2.2.0 - TBC
+## 2.4.0 - TBC
+
+### Major Changes
+
+## 2.3.0 - 2019-01-30
+
+### Major Changes
+
+  - Porting test to Molecule based
+
+## 2.2.0 - 2019-01-25
 
 ### Major Changes
 
