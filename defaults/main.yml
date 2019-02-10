@@ -14,11 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Specify OpenJDK packages for APT.
-apt: "{{ _apt }}"
-
-# Specify OpenJDK pacakges for YUM.
-yum: "{{ _yum }}"
+# Specify OpenJDK packages.
+package: "{{ _package }}"
 
 # Specify JAVA_HOME.
 java_home: "{{ _java_home }}"
