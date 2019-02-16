@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_yum: [
+_package: [
   { state: "latest", name: "java-11-openjdk" },
 ]
 _java_home: "/usr/lib/jvm/jre-openjdk"

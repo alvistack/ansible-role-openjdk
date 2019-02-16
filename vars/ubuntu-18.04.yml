@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt: [
+_package: [
   { state: "latest", name: "openjdk-11-jdk" },
 ]
 _java_home: "/usr/lib/jvm/java-11-openjdk-amd64"

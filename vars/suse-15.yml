@@ -15,6 +15,6 @@
 # limitations under the License.
 
 _package: [
-  { state: "latest", name: "java-1.8.0-openjdk" },
+  { state: "latest", name: "java-11-openjdk" },
 ]
-_java_home: "/usr/lib/jvm/jre-openjdk"
+_java_home: "/usr/lib64/jvm/jre-openjdk"

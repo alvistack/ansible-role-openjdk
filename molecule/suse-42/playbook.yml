@@ -14,7 +14,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_package: [
-  { state: "latest", name: "java-1.8.0-openjdk" },
-]
-_java_home: "/usr/lib/jvm/jre-openjdk"
+- hosts: all
+  remote_user: root
+  roles:
+    - role: java
+
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: java -version
+      command: java -version
+      register: result
+      changed_when: result is not succeeded
+
+    - name: su -l -s /bin/bash -c 'echo $JAVA_HOME'
+      command: su -l -s /bin/bash -c 'echo $JAVA_HOME'
+      args:
+        warn: false
+      register: result
+      changed_when: result is not succeeded
+      failed_when: "'/usr/lib64/jvm' not in result.stdout"
