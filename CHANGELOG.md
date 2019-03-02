@@ -4,8 +4,9 @@
 
 ### Major Changes
 
-  - Add openSUSE Leap 15 support
   - Unify variable name as `package`
+  - Add openSUSE Leap 15 support
+  - Remove CentOS 6 support
 
 ## 2.3.0 - 2019-01-30
 
