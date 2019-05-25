@@ -16,11 +16,13 @@
 
 - hosts: all
   remote_user: root
+  become: true
   roles:
     - role: java
 
 - hosts: all
   remote_user: root
+  become: true
   tasks:
     - name: java -version
       command: java -version
