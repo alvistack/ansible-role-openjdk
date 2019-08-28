@@ -4,6 +4,9 @@
 
 ### Major Changes
 
+  - Abstract package parameters with multiple version support
+  - Support openjdk-11-jdk on Ubuntu 16.04 with PPA
+
 ## 3.3.0 - 2019-08-27
 
 ### Major Changes

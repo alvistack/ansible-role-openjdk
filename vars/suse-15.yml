@@ -14,7 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_package: [
-  { state: "latest", name: "java-11-openjdk" },
-]
-_java_home: "/usr/lib64/jvm/jre-openjdk"
+_java_package:
+  1.8.0:
+    zypper: [
+      { state: "latest", name: "java-1_8_0-openjdk" },
+    ]
+    java_home: "/usr/lib64/jvm/jre-1.8.0"
+  11.0.0:
+    zypper: [
+      { state: "latest", name: "java-11-openjdk" },
+    ]
+    java_home: "/usr/lib64/jvm/jre-11"
