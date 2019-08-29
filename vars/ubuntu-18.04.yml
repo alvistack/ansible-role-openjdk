@@ -14,16 +14,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_java_package:
-  1.8.0:
-    apt_repository: []
-    apt: [
-      { state: "latest", name: "openjdk-8-jdk" },
-    ]
-    java_home: "/usr/lib/jvm/java-8-openjdk-amd64"
-  11.0.0:
-    apt_repository: []
-    apt: [
-      { state: "latest", name: "openjdk-11-jdk" },
-    ]
-    java_home: "/usr/lib/jvm/java-11-openjdk-amd64"
+_repository:
+  1.8.0: []
+  11.0.0: []
+
+_package:
+  1.8.0: [
+    { state: "latest", name: "openjdk-8-jdk" },
+  ]
+  11.0.0: [
+    { state: "latest", name: "openjdk-11-jdk" },
+  ]
+
+_java_home:
+  1.8.0: "/usr/lib/jvm/java-8-openjdk-amd64"
+  11.0.0: "/usr/lib/jvm/java-11-openjdk-amd64"
