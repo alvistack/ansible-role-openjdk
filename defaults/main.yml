@@ -17,5 +17,11 @@
 # OpenJDK version.
 java_version: "11.0.0"
 
+# Specify OpenJDK repository.
+repository: "{{ _repository[java_version] }}"
+
 # Specify OpenJDK packages.
-java_package: "{{ _java_package[java_version] }}"
+package: "{{ _package[java_version] }}"
+
+# Specify JAVA_HOME.
+java_home: "{{ _java_home[java_version] }}"
