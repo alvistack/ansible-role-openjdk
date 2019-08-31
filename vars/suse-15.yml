@@ -15,17 +15,17 @@
 # limitations under the License.
 
 _repository:
-  1.8.0: []
-  11.0.0: []
+  1.8.x: []
+  11.x: []
 
 _package:
-  1.8.0: [
+  1.8.x: [
     { state: "latest", name: "java-1_8_0-openjdk" },
   ]
-  11.0.0: [
+  11.x: [
     { state: "latest", name: "java-11-openjdk" },
   ]
 
 _java_home:
-  1.8.0: "/usr/lib64/jvm/jre-1.8.0"
-  11.0.0: "/usr/lib64/jvm/jre-11"
+  1.8.x: "/usr/lib64/jvm/jre-1.8.0"
+  11.x: "/usr/lib64/jvm/jre-11"
