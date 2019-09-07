@@ -16,17 +16,14 @@
 
 _repository:
   1.8.x: []
-  11.x: [
-    { state: "present", repo: "ppa:openjdk-r/ppa" },
-  ]
+  11.x:
+    - { state: "present", repo: "ppa:openjdk-r/ppa" }
 
 _package:
-  1.8.x: [
-    { state: "latest", name: "openjdk-8-jdk" },
-  ]
-  11.x: [
-    { state: "latest", name: "openjdk-11-jdk" },
-  ]
+  1.8.x:
+    - { state: "latest", name: "openjdk-8-jdk" }
+  11.x:
+    - { state: "latest", name: "openjdk-11-jdk" }
 
 _java_home:
   1.8.x: "/usr/lib/jvm/java-8-openjdk-amd64"
