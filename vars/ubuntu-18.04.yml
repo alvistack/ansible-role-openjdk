@@ -15,15 +15,15 @@
 # limitations under the License.
 
 _repository:
-  1.8.x: []
-  11.x: []
+  "8": []
+  "11": []
 
 _package:
-  1.8.x:
+  "8":
     - { state: "latest", name: "openjdk-8-jdk" }
-  11.x:
+  "11":
     - { state: "latest", name: "openjdk-11-jdk" }
 
 _java_home:
-  1.8.x: "/usr/lib/jvm/java-8-openjdk-amd64"
-  11.x: "/usr/lib/jvm/java-11-openjdk-amd64"
+  "8": "/usr/lib/jvm/java-8-openjdk-amd64"
+  "11": "/usr/lib/jvm/java-11-openjdk-amd64"
