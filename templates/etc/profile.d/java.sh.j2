@@ -1,2 +1,2 @@
 # {{ ansible_managed }}
-export JAVA_HOME="{{ java_home }}"
+export JAVA_HOME="{{ _java_home[java_release] }}"
