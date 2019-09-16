@@ -18,7 +18,7 @@
   yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ java_package }}"
+  loop: "{{ _yum[java_release] }}"
   register: result
   until: result is succeeded
   tags: java
