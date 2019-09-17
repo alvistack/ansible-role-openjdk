@@ -18,7 +18,7 @@
   zypper:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ _zypper[java_release] }}"
+  loop: "{{ java_package }}"
   register: result
   until: result is succeeded
   tags: java
