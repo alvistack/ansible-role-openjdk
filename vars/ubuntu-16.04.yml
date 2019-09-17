@@ -14,12 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt_repository:
+_repository:
   "8": []
   "11":
     - { state: "present", repo: "ppa:openjdk-r/ppa" }
 
-_apt:
+_package:
   "8":
     - { state: "latest", name: "openjdk-8-jdk" }
   "11":

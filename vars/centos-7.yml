@@ -14,7 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_yum:
+_repository:
+  "8": []
+  "11": []
+
+_package:
   "8":
     - { state: "latest", name: "java-1.8.0-openjdk" }
   "11":
