@@ -1,9 +1,14 @@
 # Ansible Role for Java
 
-## 3.4.0 - TBC
+## 3.5.0 - TBC
 
 ### Major Changes
 
+## 3.4.0 - 2019-09-18
+
+### Major Changes
+
+  - Run molecule test manually on Travis CI
   - Abstract package parameters with multiple version support
   - Support openjdk-11-jdk on Ubuntu 16.04 with PPA
 
