@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Run molecule test manually on Travis CI
   - Abstract package parameters with multiple version support
   - Support openjdk-11-jdk on Ubuntu 16.04 with PPA
 
