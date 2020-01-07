@@ -20,20 +20,20 @@
     state: "present"
   register: result
   until: result is succeeded
-  tags: java
+  tags: openjdk
 
 - name: apt-add-repository
   apt_repository:
     repo: "{{ item.repo }}"
     state: "{{ item.state }}"
-  loop: "{{ java_repository }}"
-  tags: java
+  loop: "{{ openjdk_repository }}"
+  tags: openjdk
 
 - name: apt-get install
   apt:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ java_package }}"
+  loop: "{{ openjdk_package }}"
   register: result
   until: result is succeeded
-  tags: java
+  tags: openjdk

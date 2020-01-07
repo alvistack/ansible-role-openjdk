@@ -15,15 +15,20 @@
 # limitations under the License.
 
 _repository:
+  "13":
+    - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
   "11": []
   "8": []
 
 _package:
+  "13":
+    - { state: "latest", name: "java-latest-openjdk" }
   "11":
     - { state: "latest", name: "java-11-openjdk" }
   "8":
     - { state: "latest", name: "java-1.8.0-openjdk" }
 
-_java_home:
+_openjdk_home:
+  "13": "/usr/lib/jvm/jre-13"
   "11": "/usr/lib/jvm/jre-11"
   "8": "/usr/lib/jvm/jre-1.8.0"

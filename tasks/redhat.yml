@@ -14,11 +14,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: yum install gnupg2
+  yum:
+    name: "gnupg2"
+    state: "present"
+  register: result
+  until: result is succeeded
+  tags: openjdk
+
+- name: yum-config-manager --add-repo
+  yum:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  loop: "{{ openjdk_repository }}"
+  register: result
+  until: result is succeeded
+  tags: openjdk
+
 - name: yum install
   yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ java_package }}"
+  loop: "{{ openjdk_package }}"
   register: result
   until: result is succeeded
-  tags: java
+  tags: openjdk

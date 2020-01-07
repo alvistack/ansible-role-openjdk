@@ -1,9 +1,9 @@
-# Ansible Role for Java
+# Ansible Role for OpenJDK
 
-[![Travis](https://img.shields.io/travis/alvistack/ansible-role-java.svg)](https://travis-ci.org/alvistack/ansible-role-java)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-java.svg)](https://github.com/alvistack/ansible-role-java)
-[![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-java.svg)](https://github.com/alvistack/ansible-role-java/blob/master/LICENSE)
-[![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.java-blue.svg)](https://galaxy.ansible.com/alvistack/java)
+[![Travis](https://img.shields.io/travis/alvistack/ansible-role-openjdk.svg)](https://travis-ci.org/alvistack/ansible-role-openjdk)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk)
+[![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk/blob/master/LICENSE)
+[![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.openjdk-blue.svg)](https://galaxy.ansible.com/alvistack/openjdk)
 
 Ansible Role for OpenJDK Installation.
 

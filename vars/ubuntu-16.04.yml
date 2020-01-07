@@ -15,16 +15,21 @@
 # limitations under the License.
 
 _repository:
+  "13":
+    - { state: "present", repo: "ppa:openjdk-r/ppa" }
   "11":
     - { state: "present", repo: "ppa:openjdk-r/ppa" }
   "8": []
 
 _package:
+  "13":
+    - { state: "latest", name: "openjdk-13-jdk" }
   "11":
     - { state: "latest", name: "openjdk-11-jdk" }
   "8":
     - { state: "latest", name: "openjdk-8-jdk" }
 
-_java_home:
+_openjdk_home:
+  "13": "/usr/lib/jvm/java-13-openjdk-amd64"
   "11": "/usr/lib/jvm/java-11-openjdk-amd64"
   "8": "/usr/lib/jvm/java-8-openjdk-amd64"

@@ -15,13 +15,13 @@
 # limitations under the License.
 
 # OpenJDK release.
-java_release: "11"
+openjdk_release: "13"
 
 # Specify OpenJDK repository.
-java_repository: "{{ _repository[java_release] }}"
+openjdk_repository: "{{ _repository[openjdk_release] }}"
 
 # Specify OpenJDK packages.
-java_package: "{{ _package[java_release] }}"
+openjdk_package: "{{ _package[openjdk_release] }}"
 
 # Specify JAVA_HOME.
-java_home: "{{ _java_home[java_release] }}"
+openjdk_home: "{{ _openjdk_home[openjdk_release] }}"

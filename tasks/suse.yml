@@ -14,11 +14,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: zypper install gpg2
+  zypper:
+    name: "gpg2"
+    state: "present"
+  register: result
+  until: result is succeeded
+  tags: openjdk
+
+- name: zypper addrepo
+  zypper_repository:
+    name: "{{ item.name }}"
+    repo: "{{ item.repo }}"
+    state: "{{ item.state }}"
+    disable_gpg_check: true
+    auto_import_keys: true
+    autorefresh: true
+  loop: "{{ openjdk_repository }}"
+  tags: openjdk
+
 - name: zypper install
   zypper:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ java_package }}"
+  loop: "{{ openjdk_package }}"
   register: result
   until: result is succeeded
-  tags: java
+  tags: openjdk
