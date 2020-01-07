@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # OpenJDK release.
-java_release: "11"
+java_release: "13"
 
 # Specify OpenJDK repository.
 java_repository: "{{ _repository[java_release] }}"

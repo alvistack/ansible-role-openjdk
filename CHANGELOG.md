@@ -2,6 +2,8 @@
 
 ## 4.1.0 - TBC
 
+  - Add OpenJDK 13 support
+
 ### Major Changes
 
 ## 4.0.0 - 2019-11-05
