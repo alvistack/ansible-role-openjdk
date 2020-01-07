@@ -23,10 +23,16 @@ _repository:
 _package:
   "13":
     - { state: "latest", name: "java-13-openjdk" }
+    - { state: "latest", name: "java-13-openjdk-headless" }
+    - { state: "latest", name: "java-13-openjdk-devel" }
   "11":
     - { state: "latest", name: "java-11-openjdk" }
+    - { state: "latest", name: "java-11-openjdk-headless" }
+    - { state: "latest", name: "java-11-openjdk-devel" }
   "8":
     - { state: "latest", name: "java-1_8_0-openjdk" }
+    - { state: "latest", name: "java-1_8_0-openjdk-headless" }
+    - { state: "latest", name: "java-1_8_0-openjdk-devel" }
 
 _openjdk_home:
   "13": "/usr/lib64/jvm/jre-13"
