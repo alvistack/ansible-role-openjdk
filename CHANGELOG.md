@@ -4,6 +4,7 @@
 
   - Rename role as `openjdk`
   - Add OpenJDK 13 support
+  - Add `jshell` for Docker image
 
 ### Major Changes
 
