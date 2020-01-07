@@ -1,7 +1,8 @@
-# Ansible Role for Java
+# Ansible Role for OpenJDK
 
 ## 4.1.0 - TBC
 
+  - Rename role as `openjdk`
   - Add OpenJDK 13 support
 
 ### Major Changes

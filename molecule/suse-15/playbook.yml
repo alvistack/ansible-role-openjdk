@@ -18,7 +18,7 @@
   remote_user: root
   become: true
   roles:
-    - role: java
+    - role: openjdk
 
 - hosts: all
   remote_user: root

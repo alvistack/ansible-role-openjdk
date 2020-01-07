@@ -20,7 +20,7 @@
     state: "present"
   register: result
   until: result is succeeded
-  tags: java
+  tags: openjdk
 
 - name: zypper addrepo
   zypper_repository:
@@ -30,14 +30,14 @@
     disable_gpg_check: true
     auto_import_keys: true
     autorefresh: true
-  loop: "{{ java_repository }}"
-  tags: java
+  loop: "{{ openjdk_repository }}"
+  tags: openjdk
 
 - name: zypper install
   zypper:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ java_package }}"
+  loop: "{{ openjdk_package }}"
   register: result
   until: result is succeeded
-  tags: java
+  tags: openjdk

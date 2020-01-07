@@ -20,22 +20,22 @@
     state: "present"
   register: result
   until: result is succeeded
-  tags: java
+  tags: openjdk
 
 - name: yum-config-manager --add-repo
   yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ java_repository }}"
+  loop: "{{ openjdk_repository }}"
   register: result
   until: result is succeeded
-  tags: java
+  tags: openjdk
 
 - name: yum install
   yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ java_package }}"
+  loop: "{{ openjdk_package }}"
   register: result
   until: result is succeeded
-  tags: java
+  tags: openjdk

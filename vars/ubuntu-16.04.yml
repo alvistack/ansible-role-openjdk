@@ -29,7 +29,7 @@ _package:
   "8":
     - { state: "latest", name: "openjdk-8-jdk" }
 
-_java_home:
+_openjdk_home:
   "13": "/usr/lib/jvm/java-13-openjdk-amd64"
   "11": "/usr/lib/jvm/java-11-openjdk-amd64"
   "8": "/usr/lib/jvm/java-8-openjdk-amd64"

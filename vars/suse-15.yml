@@ -28,7 +28,7 @@ _package:
   "8":
     - { state: "latest", name: "java-1_8_0-openjdk" }
 
-_java_home:
+_openjdk_home:
   "13": "/usr/lib64/jvm/jre-13"
   "11": "/usr/lib64/jvm/jre-11"
   "8": "/usr/lib64/jvm/jre-1.8.0"

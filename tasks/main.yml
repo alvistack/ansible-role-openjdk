@@ -16,7 +16,7 @@
 
 - name: include default variables
   include_vars: "../vars/main.yml"
-  tags: java
+  tags: openjdk
 
 - name: include release specific variables
   include_vars: "{{ lookup('first_found', _params) }}"
@@ -31,7 +31,7 @@
       paths:
         - "../vars"
   ignore_errors: true
-  tags: java
+  tags: openjdk
 
 - name: include release specific tasks
   include_tasks: "{{ lookup('first_found', _params) }}"
@@ -46,7 +46,7 @@
       paths:
         - "."
   ignore_errors: true
-  tags: java
+  tags: openjdk
 
 - name: copy templates
   template:
@@ -57,4 +57,4 @@
     mode: "{{ item.mode | default('0644') }}"
   loop:
     - { dest: "/etc/profile.d/java.sh" }
-  tags: java
+  tags: openjdk
