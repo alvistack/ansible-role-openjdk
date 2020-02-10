@@ -37,4 +37,4 @@
         executable: "/bin/bash"
       register: result
       changed_when: result is not succeeded
-      failed_when: "'/usr/lib/jvm' not in result.stdout"
+      failed_when: openjdk_home not in result.stdout
