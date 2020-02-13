@@ -17,7 +17,10 @@
 - hosts: all
   remote_user: root
   become: true
-  tasks:
+  roles:
+    - role: openjdk
+
+  post_tasks:
     - name: java -version
       command: java -version
       register: result
