@@ -16,7 +16,9 @@
 
 _repository:
   "13":
-    - { state: "present", name: "Java:Factory", repo: "http://download.opensuse.org/repositories/Java:/Factory/openSUSE_Leap_15.1" }
+    - name: "Java:Factory"
+      repo: "http://download.opensuse.org/repositories/Java:/Factory/openSUSE_Leap_15.1"
+      state: "present"
   "11": []
   "8": []
 

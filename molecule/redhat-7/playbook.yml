@@ -19,22 +19,3 @@
   become: true
   roles:
     - role: openjdk
-
-- hosts: all
-  remote_user: root
-  become: true
-  tasks:
-    - name: java -version
-      command: java -version
-      register: result
-      changed_when: result is not succeeded
-
-    - name: su -l -s /bin/bash -c 'echo $JAVA_HOME'
-      shell: |
-        set -o pipefail
-        su -l -s /bin/bash -c 'echo $JAVA_HOME'
-      args:
-        executable: "/bin/bash"
-      register: result
-      changed_when: result is not succeeded
-      failed_when: openjdk_home not in result.stdout
