@@ -27,6 +27,8 @@
     repo: "{{ item.repo }}"
     state: "{{ item.state }}"
   loop: "{{ openjdk_repository }}"
+  register: result
+  until: result is succeeded
   tags: openjdk
 
 - name: apt-get install
