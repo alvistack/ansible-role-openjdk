@@ -16,7 +16,8 @@
 
 _repository:
   "13":
-    - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
+    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+      state: "latest"
   "11": []
   "8": []
 
