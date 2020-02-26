@@ -16,7 +16,8 @@
 
 _repository:
   "13":
-    - { state: "present", repo: "ppa:openjdk-r/ppa" }
+    - repo: "ppa:openjdk-r/ppa"
+      state: "present"
   "11": []
   "8": []
 
