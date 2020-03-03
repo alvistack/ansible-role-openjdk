@@ -17,5 +17,6 @@
 - hosts: all
   remote_user: root
   become: true
-  roles:
-    - role: openjdk
+  tasks:
+    - include_role:
+        name: openjdk
