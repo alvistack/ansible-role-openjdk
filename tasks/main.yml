@@ -48,6 +48,19 @@
   ignore_errors: true
   tags: openjdk
 
+- name: prepare directories
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "/usr/local/bin" }
+    - { dest: "/usr/local/maven" }
+    - { dest: "{{ maven_download.dest | dirname }}" }
+  tags: openjdk
+
 - name: copy templates
   template:
     dest: "{{ item.dest }}"
@@ -57,4 +70,49 @@
     mode: "{{ item.mode | default('0644') }}"
   loop:
     - { dest: "/etc/profile.d/java.sh" }
+  tags: openjdk
+
+- name: download archive
+  vars:
+    ansible_python_interpreter: "python3"
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+    checksum: "{{ item.checksum }}"
+    timeout: 300
+  loop:
+    - "{{ maven_download }}"
+  register: get_url_result
+  until: get_url_result is succeeded
+  tags: openjdk
+
+- name: unarchive package
+  shell: |
+    set -o pipefail
+    rm -rf /usr/local/maven \
+      && mkdir -p /usr/local/maven
+    cd /usr/local/maven
+    TMP_DIR="$(mktemp -d)" \
+      && tar -zx -C $TMP_DIR -f {{ maven_download.dest }} \
+      && chown root:root $TMP_DIR/* \
+      && chmod 0755 $TMP_DIR/*/bin/* \
+      && cp -rfT $TMP_DIR/* . \
+      && rm -rf $TMP_DIR
+    cd /usr/local/bin
+    ln -fs /usr/local/maven/bin/mvn .
+  args:
+    executable: "/bin/bash"
+  when: get_url_result is changed
+  tags: openjdk
+
+- name: prepare files
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+    state: "{{ item.state | default('file') }}"
+  loop:
+    - { dest: "/usr/local/bin/mvn", mode: "0755", state: "link" }
+    - { dest: "/usr/local/maven/bin/mvn", mode: "0755" }
   tags: openjdk

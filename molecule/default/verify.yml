@@ -22,3 +22,8 @@
       command: java -version
       register: result
       changed_when: result is not succeeded
+
+    - name: mvn --version
+      command: mvn --version
+      register: result
+      changed_when: result is not succeeded
