@@ -25,3 +25,9 @@ openjdk_package: "{{ _package[openjdk_release] }}"
 
 # Specify JAVA_HOME.
 openjdk_home: "{{ _openjdk_home[openjdk_release] }}"
+
+# Maven version.
+maven_version: "3.6.3"
+
+# Maven download details.
+maven_download: "{{ _maven_download[maven_version] }}"
