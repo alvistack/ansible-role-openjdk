@@ -1,0 +1,41 @@
+---
+
+# (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+_repository:
+  "13":
+    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
+      state: "latest"
+  "11": []
+  "8": []
+
+_package:
+  "13":
+    - { state: "latest", name: "java-latest-openjdk" }
+    - { state: "latest", name: "java-latest-openjdk-headless" }
+    - { state: "latest", name: "java-latest-openjdk-devel" }
+  "11":
+    - { state: "latest", name: "java-11-openjdk" }
+    - { state: "latest", name: "java-11-openjdk-headless" }
+    - { state: "latest", name: "java-11-openjdk-devel" }
+  "8":
+    - { state: "latest", name: "java-1.8.0-openjdk" }
+    - { state: "latest", name: "java-1.8.0-openjdk-headless" }
+    - { state: "latest", name: "java-1.8.0-openjdk-devel" }
+
+_openjdk_home:
+  "13": "/usr/lib/jvm/jre-13"
+  "11": "/usr/lib/jvm/jre-11"
+  "8": "/usr/lib/jvm/jre-1.8.0"
