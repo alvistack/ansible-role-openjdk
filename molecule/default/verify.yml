@@ -24,6 +24,8 @@
       changed_when: result is not succeeded
 
     - name: mvn --version
+      environment:
+        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       command: mvn --version
       register: result
       changed_when: result is not succeeded
