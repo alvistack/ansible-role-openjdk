@@ -14,29 +14,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_zypper_repository:
+_rpm_repository:
   "13":
-    - name: "Java:Factory"
-      repo: "http://download.opensuse.org/repositories/Java:/Factory/openSUSE_Leap_15.1"
-      state: "present"
+    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
+      state: "latest"
   "11": []
   "8": []
 
-_zypper:
+_yum:
   "13":
-    - { state: "latest", name: "java-13-openjdk" }
-    - { state: "latest", name: "java-13-openjdk-headless" }
-    - { state: "latest", name: "java-13-openjdk-devel" }
+    - { state: "latest", name: "java-latest-openjdk" }
+    - { state: "latest", name: "java-latest-openjdk-headless" }
+    - { state: "latest", name: "java-latest-openjdk-devel" }
   "11":
     - { state: "latest", name: "java-11-openjdk" }
     - { state: "latest", name: "java-11-openjdk-headless" }
     - { state: "latest", name: "java-11-openjdk-devel" }
   "8":
-    - { state: "latest", name: "java-1_8_0-openjdk" }
-    - { state: "latest", name: "java-1_8_0-openjdk-headless" }
-    - { state: "latest", name: "java-1_8_0-openjdk-devel" }
+    - { state: "latest", name: "java-1.8.0-openjdk" }
+    - { state: "latest", name: "java-1.8.0-openjdk-headless" }
+    - { state: "latest", name: "java-1.8.0-openjdk-devel" }
 
 _openjdk_home:
-  "13": "/usr/lib64/jvm/jre-13"
-  "11": "/usr/lib64/jvm/jre-11"
-  "8": "/usr/lib64/jvm/jre-1.8.0"
+  "13": "/usr/lib/jvm/jre-13"
+  "11": "/usr/lib/jvm/jre-11"
+  "8": "/usr/lib/jvm/jre-1.8.0"
