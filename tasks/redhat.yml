@@ -26,7 +26,7 @@
   yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ openjdk_repository }}"
+  loop: "{{ _rpm_repository[openjdk_release] }}"
   register: result
   until: result is succeeded
   tags: openjdk
@@ -35,7 +35,7 @@
   yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ openjdk_package }}"
+  loop: "{{ _yum[openjdk_release] }}"
   register: result
   until: result is succeeded
   tags: openjdk

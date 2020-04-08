@@ -14,14 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_repository:
+_apt_repository:
   "13":
     - repo: "ppa:openjdk-r/ppa"
       state: "present"
   "11": []
   "8": []
 
-_package:
+_apt:
   "13":
     - { state: "latest", name: "openjdk-13-jdk" }
     - { state: "latest", name: "openjdk-13-jdk-headless" }

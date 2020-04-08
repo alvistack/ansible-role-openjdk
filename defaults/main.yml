@@ -17,12 +17,6 @@
 # OpenJDK release.
 openjdk_release: "13"
 
-# Specify OpenJDK repository.
-openjdk_repository: "{{ _repository[openjdk_release] }}"
-
-# Specify OpenJDK packages.
-openjdk_package: "{{ _package[openjdk_release] }}"
-
 # Specify JAVA_HOME.
 openjdk_home: "{{ _openjdk_home[openjdk_release] }}"
 

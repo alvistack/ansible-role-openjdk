@@ -26,7 +26,7 @@
   apt_repository:
     repo: "{{ item.repo }}"
     state: "{{ item.state }}"
-  loop: "{{ openjdk_repository }}"
+  loop: "{{ _apt_repository[openjdk_release] }}"
   register: result
   until: result is succeeded
   tags: openjdk
@@ -35,7 +35,7 @@
   apt:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ openjdk_package }}"
+  loop: "{{ _apt[openjdk_release] }}"
   register: result
   until: result is succeeded
   tags: openjdk
