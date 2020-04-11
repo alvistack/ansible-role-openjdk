@@ -22,6 +22,14 @@
   until: result is succeeded
   tags: openjdk
 
+- name: apt-get install software-properties-common
+  apt:
+    name: "software-properties-common"
+    state: "present"
+  register: result
+  until: result is succeeded
+  tags: openjdk
+
 - name: apt-add-repository
   apt_repository:
     repo: "{{ item.repo }}"
