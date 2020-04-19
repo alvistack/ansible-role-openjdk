@@ -15,7 +15,9 @@
 # limitations under the License.
 
 _apt_repository:
-  "13": []
+  "13":
+    - repo: "ppa:openjdk-r/ppa"
+      state: "present"
   "11": []
   "8": []
 
