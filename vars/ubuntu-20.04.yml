@@ -14,10 +14,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt_repository:
-  "13": []
+_apt_key:
+  "13":
+    - url: "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDA1A4A13543B466853BAF164EB9B1D8886F44E2A"
+      id: "DA1A4A13543B466853BAF164EB9B1D8886F44E2A"
+      state: "present"
   "11": []
-  "8": []
+  "8":
+    - url: "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDA1A4A13543B466853BAF164EB9B1D8886F44E2A"
+      id: "DA1A4A13543B466853BAF164EB9B1D8886F44E2A"
+      state: "present"
+
+_apt_repository:
+  "13":
+    - repo: "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu focal main"
+      state: "present"
+  "11": []
+  "8":
+    - repo: "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu focal main"
+      state: "present"
 
 _apt:
   "13":

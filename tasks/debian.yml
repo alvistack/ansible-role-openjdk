@@ -22,10 +22,12 @@
   until: result is succeeded
   tags: openjdk
 
-- name: apt-get install software-properties-common
-  apt:
-    name: "software-properties-common"
-    state: "present"
+- name: apt-key add
+  apt_key:
+    url: "{{ item.url }}"
+    id: "{{ item.id }}"
+    state: "{{ item.state }}"
+  loop: "{{ _apt_key[openjdk_release] }}"
   register: result
   until: result is succeeded
   tags: openjdk
