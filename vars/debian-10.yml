@@ -15,23 +15,39 @@
 # limitations under the License.
 
 _apt_key:
-  "13": []
-  "11": []
-  "8": []
+  "13":
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
+  "11":
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
+  "8":
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
 
 _apt_repository:
-  "13": []
-  "11": []
-  "8": []
+  "13":
+    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+      state: "present"
+  "11":
+    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+      state: "present"
+  "8":
+    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+      state: "present"
 
 _apt:
-  "13": []
+  "13":
+    - { state: "latest", name: "adoptopenjdk-13-hotspot" }
   "11":
-    - { state: "latest", name: "openjdk-11-jdk" }
-    - { state: "latest", name: "openjdk-11-jdk-headless" }
-  "8": []
+    - { state: "latest", name: "adoptopenjdk-11-hotspot" }
+  "8":
+    - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:
-  "13": ~
-  "11": "/usr/lib/jvm/java-11-openjdk-amd64"
-  "8": ~
+  "13": "/usr/lib/jvm/adoptopenjdk-13-hotspot-amd64"
+  "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
+  "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64"

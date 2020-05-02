@@ -16,31 +16,38 @@
 
 _apt_key:
   "13":
-    - url: "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDA1A4A13543B466853BAF164EB9B1D8886F44E2A"
-      id: "DA1A4A13543B466853BAF164EB9B1D8886F44E2A"
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
-  "11": []
-  "8": []
+  "11":
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
+  "8":
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
 
 _apt_repository:
   "13":
-    - repo: "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic main"
+    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ bionic main"
       state: "present"
-  "11": []
-  "8": []
+  "11":
+    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ bionic main"
+      state: "present"
+  "8":
+    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ bionic main"
+      state: "present"
 
 _apt:
   "13":
-    - { state: "latest", name: "openjdk-13-jdk" }
-    - { state: "latest", name: "openjdk-13-jdk-headless" }
+    - { state: "latest", name: "adoptopenjdk-13-hotspot" }
   "11":
-    - { state: "latest", name: "openjdk-11-jdk" }
-    - { state: "latest", name: "openjdk-11-jdk-headless" }
+    - { state: "latest", name: "adoptopenjdk-11-hotspot" }
   "8":
-    - { state: "latest", name: "openjdk-8-jdk" }
-    - { state: "latest", name: "openjdk-8-jdk-headless" }
+    - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:
-  "13": "/usr/lib/jvm/java-13-openjdk-amd64"
-  "11": "/usr/lib/jvm/java-11-openjdk-amd64"
-  "8": "/usr/lib/jvm/java-8-openjdk-amd64"
+  "13": "/usr/lib/jvm/adoptopenjdk-13-hotspot-amd64"
+  "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
+  "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64"

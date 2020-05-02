@@ -16,27 +16,27 @@
 
 _zypper_repository:
   "13":
-    - name: "Java:Factory"
-      repo: "http://download.opensuse.org/repositories/Java:/Factory/openSUSE_Leap_15.1"
+    - name: "AdoptOpenJDK"
+      repo: "https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.1/x86_64"
       state: "present"
-  "11": []
-  "8": []
+  "11":
+    - name: "AdoptOpenJDK"
+      repo: "https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.1/x86_64"
+      state: "present"
+  "8":
+    - name: "AdoptOpenJDK"
+      repo: "https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.1/x86_64"
+      state: "present"
 
 _zypper:
   "13":
-    - { state: "latest", name: "java-13-openjdk" }
-    - { state: "latest", name: "java-13-openjdk-headless" }
-    - { state: "latest", name: "java-13-openjdk-devel" }
+    - { state: "latest", name: "adoptopenjdk-13-hotspot" }
   "11":
-    - { state: "latest", name: "java-11-openjdk" }
-    - { state: "latest", name: "java-11-openjdk-headless" }
-    - { state: "latest", name: "java-11-openjdk-devel" }
+    - { state: "latest", name: "adoptopenjdk-11-hotspot" }
   "8":
-    - { state: "latest", name: "java-1_8_0-openjdk" }
-    - { state: "latest", name: "java-1_8_0-openjdk-headless" }
-    - { state: "latest", name: "java-1_8_0-openjdk-devel" }
+    - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:
-  "13": "/usr/lib64/jvm/jre-13"
-  "11": "/usr/lib64/jvm/jre-11"
-  "8": "/usr/lib64/jvm/jre-1.8.0"
+  "13": "/usr/lib/jvm/adoptopenjdk-13-hotspot-amd64"
+  "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
+  "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64"

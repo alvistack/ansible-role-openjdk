@@ -14,28 +14,61 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_rpm_repository:
+_rpm_key:
   "13":
-    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
-      state: "latest"
-  "11": []
-  "8": []
+    - key: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      fingerprint: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
+  "11":
+    - key: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      fingerprint: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
+  "8":
+    - key: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      fingerprint: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
+
+_yum_repository:
+  "13":
+    - file: "adoptopenjdk"
+      name: "AdoptOpenJDK"
+      description: "AdoptOpenJDK"
+      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/rhel/8/x86_64"
+      enabled: true
+      priority: "2"
+      gpgcheck: true
+      gpgkey: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      state: "present"
+  "11":
+    - file: "adoptopenjdk"
+      name: "AdoptOpenJDK"
+      description: "AdoptOpenJDK"
+      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/rhel/8/x86_64"
+      enabled: true
+      priority: "2"
+      gpgcheck: true
+      gpgkey: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      state: "present"
+  "8":
+    - file: "adoptopenjdk"
+      name: "AdoptOpenJDK"
+      description: "AdoptOpenJDK"
+      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/rhel/8/x86_64"
+      enabled: true
+      priority: "2"
+      gpgcheck: true
+      gpgkey: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      state: "present"
 
 _yum:
   "13":
-    - { state: "latest", name: "java-latest-openjdk" }
-    - { state: "latest", name: "java-latest-openjdk-headless" }
-    - { state: "latest", name: "java-latest-openjdk-devel" }
+    - { state: "latest", name: "adoptopenjdk-13-hotspot" }
   "11":
-    - { state: "latest", name: "java-11-openjdk" }
-    - { state: "latest", name: "java-11-openjdk-headless" }
-    - { state: "latest", name: "java-11-openjdk-devel" }
+    - { state: "latest", name: "adoptopenjdk-11-hotspot" }
   "8":
-    - { state: "latest", name: "java-1.8.0-openjdk" }
-    - { state: "latest", name: "java-1.8.0-openjdk-headless" }
-    - { state: "latest", name: "java-1.8.0-openjdk-devel" }
+    - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:
-  "13": "/usr/lib/jvm/jre-13"
-  "11": "/usr/lib/jvm/jre-11"
-  "8": "/usr/lib/jvm/jre-1.8.0"
+  "13": "/usr/lib/jvm/adoptopenjdk-13-hotspot-amd64"
+  "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
+  "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64"
