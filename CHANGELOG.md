@@ -4,6 +4,9 @@
 
 ### Major Changes
 
+  - Replace AdoptOpenJDK 13 with 14 for Ubuntu 20.04
+  - Install from AdoptOpenJDK repo
+  - Support Debian 10
   - `molecule -s default` with delegated to localhost
 
 ## 4.3.0 - 2020-04-22

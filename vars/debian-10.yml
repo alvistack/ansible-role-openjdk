@@ -14,21 +14,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_zypper_repository:
+_apt_key:
   "14":
-    - name: "AdoptOpenJDK"
-      repo: "https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.1/x86_64"
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
   "11":
-    - name: "AdoptOpenJDK"
-      repo: "https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.1/x86_64"
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
   "8":
-    - name: "AdoptOpenJDK"
-      repo: "https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.1/x86_64"
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
 
-_zypper:
+_apt_repository:
+  "14":
+    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+      state: "present"
+  "11":
+    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+      state: "present"
+  "8":
+    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+      state: "present"
+
+_apt:
   "14":
     - { state: "latest", name: "adoptopenjdk-14-hotspot" }
   "11":

@@ -22,13 +22,28 @@
   until: result is succeeded
   tags: openjdk
 
-- name: yum-config-manager --add-repo
-  yum:
-    name: "{{ item.name }}"
+- name: rpm --import
+  rpm_key:
+    key: "{{ item.key }}"
+    fingerprint: "{{ item.fingerprint }}"
     state: "{{ item.state }}"
-  loop: "{{ _rpm_repository[openjdk_release] }}"
+  loop: "{{ _rpm_key[openjdk_release] }}"
   register: result
   until: result is succeeded
+  tags: openjdk
+
+- name: yum-config-manager --add-repo
+  yum_repository:
+    file: "{{ item.file }}"
+    name: "{{ item.name }}"
+    description: "{{ item.description }}"
+    baseurl: "{{ item.baseurl }}"
+    enabled: "{{ item.enabled }}"
+    priority: "{{ item.priority | default(None) or omit }}"
+    gpgcheck: "{{ item.gpgcheck | default(None) or omit }}"
+    gpgkey: "{{ item.gpgkey | default(None) or omit }}"
+    state: "{{ item.state }}"
+  loop: "{{ _yum_repository[openjdk_release] }}"
   tags: openjdk
 
 - name: yum install
