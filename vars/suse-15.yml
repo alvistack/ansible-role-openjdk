@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _zypper_repository:
-  "13":
+  "14":
     - name: "AdoptOpenJDK"
       repo: "https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.1/x86_64"
       state: "present"
@@ -29,14 +29,14 @@ _zypper_repository:
       state: "present"
 
 _zypper:
-  "13":
-    - { state: "latest", name: "adoptopenjdk-13-hotspot" }
+  "14":
+    - { state: "latest", name: "adoptopenjdk-14-hotspot" }
   "11":
     - { state: "latest", name: "adoptopenjdk-11-hotspot" }
   "8":
     - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:
-  "13": "/usr/lib/jvm/adoptopenjdk-13-hotspot-amd64"
+  "14": "/usr/lib/jvm/adoptopenjdk-14-hotspot-amd64"
   "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
   "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64"

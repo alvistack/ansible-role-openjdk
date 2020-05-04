@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _rpm_key:
-  "13":
+  "14":
     - key: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       fingerprint: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
@@ -29,7 +29,7 @@ _rpm_key:
       state: "present"
 
 _yum_repository:
-  "13":
+  "14":
     - file: "adoptopenjdk"
       name: "AdoptOpenJDK"
       description: "AdoptOpenJDK"
@@ -61,14 +61,14 @@ _yum_repository:
       state: "present"
 
 _yum:
-  "13":
-    - { state: "latest", name: "adoptopenjdk-13-hotspot" }
+  "14":
+    - { state: "latest", name: "adoptopenjdk-14-hotspot" }
   "11":
     - { state: "latest", name: "adoptopenjdk-11-hotspot" }
   "8":
     - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:
-  "13": "/usr/lib/jvm/adoptopenjdk-13-hotspot-amd64"
+  "14": "/usr/lib/jvm/adoptopenjdk-14-hotspot-amd64"
   "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
   "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64"
