@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-  - Support Fedora 30
+  - Support Fedora 31
   - Replace AdoptOpenJDK 13 with 14 for Ubuntu 20.04
   - Install from AdoptOpenJDK repo
   - Support Debian 10
