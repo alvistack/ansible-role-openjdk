@@ -33,7 +33,7 @@ _yum_repository:
     - file: "adoptopenjdk"
       name: "AdoptOpenJDK"
       description: "AdoptOpenJDK"
-      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/fedora/31/x86_64"
+      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/fedora/32/x86_64"
       enabled: true
       priority: "2"
       gpgcheck: true
@@ -43,7 +43,7 @@ _yum_repository:
     - file: "adoptopenjdk"
       name: "AdoptOpenJDK"
       description: "AdoptOpenJDK"
-      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/fedora/31/x86_64"
+      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/fedora/32/x86_64"
       enabled: true
       priority: "2"
       gpgcheck: true
@@ -53,7 +53,7 @@ _yum_repository:
     - file: "adoptopenjdk"
       name: "AdoptOpenJDK"
       description: "AdoptOpenJDK"
-      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/fedora/31/x86_64"
+      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/fedora/32/x86_64"
       enabled: true
       priority: "2"
       gpgcheck: true
