@@ -1,0 +1,74 @@
+---
+
+# (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+_rpm_key:
+  "14":
+    - key: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      fingerprint: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
+  "11":
+    - key: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      fingerprint: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
+  "8":
+    - key: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      fingerprint: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+      state: "present"
+
+_yum_repository:
+  "14":
+    - file: "adoptopenjdk"
+      name: "AdoptOpenJDK"
+      description: "AdoptOpenJDK"
+      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/fedora/32/x86_64"
+      enabled: true
+      priority: "2"
+      gpgcheck: true
+      gpgkey: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      state: "present"
+  "11":
+    - file: "adoptopenjdk"
+      name: "AdoptOpenJDK"
+      description: "AdoptOpenJDK"
+      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/fedora/32/x86_64"
+      enabled: true
+      priority: "2"
+      gpgcheck: true
+      gpgkey: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      state: "present"
+  "8":
+    - file: "adoptopenjdk"
+      name: "AdoptOpenJDK"
+      description: "AdoptOpenJDK"
+      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/fedora/32/x86_64"
+      enabled: true
+      priority: "2"
+      gpgcheck: true
+      gpgkey: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      state: "present"
+
+_yum:
+  "14":
+    - { state: "latest", name: "adoptopenjdk-14-hotspot" }
+  "11":
+    - { state: "latest", name: "adoptopenjdk-11-hotspot" }
+  "8":
+    - { state: "latest", name: "adoptopenjdk-8-hotspot" }
+
+_openjdk_home:
+  "14": "/usr/lib/jvm/adoptopenjdk-14-hotspot-amd64"
+  "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
+  "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64"
