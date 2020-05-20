@@ -69,6 +69,6 @@ _yum:
     - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:
-  "14": "/usr/lib/jvm/adoptopenjdk-14-hotspot-amd64"
-  "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
-  "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64"
+  "14": "/usr/lib/jvm/adoptopenjdk-14-hotspot"
+  "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot"
+  "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot"
