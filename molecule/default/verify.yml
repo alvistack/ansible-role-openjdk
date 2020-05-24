@@ -29,3 +29,14 @@
       command: mvn --version
       register: result
       changed_when: result is not succeeded
+
+    - name: echo $JAVA_HOME
+      shell: |
+        set -o pipefail
+        source /etc/profile
+        echo $JAVA_HOME
+      args:
+        executable: "/bin/bash"
+      register: result
+      changed_when: result is not succeeded
+      failed_when: "openjdk_home not in result.stdout"
