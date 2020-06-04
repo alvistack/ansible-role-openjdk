@@ -29,3 +29,13 @@
       command: mvn --version
       register: result
       changed_when: result is not succeeded
+
+    - name: $JAVA_HOME/bin/java -version
+      shell: |
+        set -o pipefail
+        source /etc/profile
+        $JAVA_HOME/bin/java -version
+      args:
+        executable: "/bin/bash"
+      register: result
+      changed_when: result is not succeeded
