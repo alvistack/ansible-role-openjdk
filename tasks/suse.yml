@@ -34,7 +34,6 @@
     disable_gpg_check: true
     auto_import_keys: true
     autorefresh: true
-    mode: "0644"
   loop: "{{ _zypper_repository[openjdk_release] }}"
   register: result
   until: result is succeeded
