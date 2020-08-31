@@ -1,7 +1,7 @@
 # Ansible Role for OpenJDK
 
 [![Travis](https://img.shields.io/travis/com/alvistack/ansible-role-openjdk.svg)](https://travis-ci.com/alvistack/ansible-role-openjdk)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.openjdk-blue.svg)](https://galaxy.ansible.com/alvistack/openjdk)
 
