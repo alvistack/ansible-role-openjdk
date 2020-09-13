@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # OpenJDK release.
-openjdk_release: "11"
+openjdk_release: "14"
 
 # Specify JAVA_HOME.
 openjdk_home: "{{ _openjdk_home[openjdk_release] }}"
