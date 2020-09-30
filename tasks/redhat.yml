@@ -20,7 +20,6 @@
     state: "present"
   register: result
   until: result is succeeded
-  tags: openjdk
 
 - name: rpm --import
   rpm_key:
@@ -30,7 +29,6 @@
   loop: "{{ _rpm_key[openjdk_release] }}"
   register: result
   until: result is succeeded
-  tags: openjdk
 
 - name: yum-config-manager --add-repo
   yum_repository:
@@ -44,7 +42,6 @@
     gpgkey: "{{ item.gpgkey }}"
     state: "{{ item.state }}"
   loop: "{{ _yum_repository[openjdk_release] }}"
-  tags: openjdk
 
 - name: yum install
   yum:
@@ -53,4 +50,3 @@
   loop: "{{ _yum[openjdk_release] }}"
   register: result
   until: result is succeeded
-  tags: openjdk

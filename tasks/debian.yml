@@ -20,7 +20,6 @@
     state: "present"
   register: result
   until: result is succeeded
-  tags: openjdk
 
 - name: apt-key add
   apt_key:
@@ -30,7 +29,6 @@
   loop: "{{ _apt_key[openjdk_release] }}"
   register: result
   until: result is succeeded
-  tags: openjdk
 
 - name: apt-add-repository
   apt_repository:
@@ -40,7 +38,6 @@
   loop: "{{ _apt_repository[openjdk_release] }}"
   register: result
   until: result is succeeded
-  tags: openjdk
 
 - name: apt-get install
   apt:
@@ -49,4 +46,3 @@
   loop: "{{ _apt[openjdk_release] }}"
   register: result
   until: result is succeeded
-  tags: openjdk
