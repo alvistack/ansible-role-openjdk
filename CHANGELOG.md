@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Replace AdoptOpenJDK 14 with 15
+
 ## 4.5.0 - 2020-08-26
 
 ### Major Changes
