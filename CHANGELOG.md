@@ -4,6 +4,9 @@
 
 ### Major Changes
 
+  - Remove redundant tags from tasks
+  - Replace AdoptOpenJDK 14 with 15
+
 ## 4.5.0 - 2020-08-26
 
 ### Major Changes

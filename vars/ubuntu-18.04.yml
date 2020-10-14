@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _apt_key:
-  "14":
+  "15":
     - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
@@ -29,7 +29,7 @@ _apt_key:
       state: "present"
 
 _apt_repository:
-  "14":
+  "15":
     - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ bionic main"
       state: "present"
   "11":
@@ -40,14 +40,14 @@ _apt_repository:
       state: "present"
 
 _apt:
-  "14":
-    - { state: "latest", name: "adoptopenjdk-14-hotspot" }
+  "15":
+    - { state: "latest", name: "adoptopenjdk-15-hotspot" }
   "11":
     - { state: "latest", name: "adoptopenjdk-11-hotspot" }
   "8":
     - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:
-  "14": "/usr/lib/jvm/adoptopenjdk-14-hotspot-amd64"
+  "15": "/usr/lib/jvm/adoptopenjdk-15-hotspot-amd64"
   "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
   "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64"

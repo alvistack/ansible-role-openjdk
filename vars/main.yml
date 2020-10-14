@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _maven_download:
-  3.6.3:
+  "3.6.3":
     url: "https://apache.osuosl.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/apache-maven-3.6.3-bin.tar.gz"
     checksum: "sha1:cc836dc7e64b113472df31996caaedf132969009"
