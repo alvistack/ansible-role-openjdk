@@ -84,7 +84,7 @@
 
 - name: unarchive package
   shell: |
-    set -o pipefail
+    set -euo pipefail
     rm -rf /usr/local/maven \
       && mkdir -p /usr/local/maven
     cd /usr/local/maven
