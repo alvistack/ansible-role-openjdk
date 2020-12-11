@@ -33,7 +33,7 @@
     - name: $JAVA_HOME/bin/java -version
       shell: |
         set -euo pipefail
-        source /etc/profile
+        source /etc/profile.d/java.sh
         $JAVA_HOME/bin/java -version
       args:
         executable: "/bin/bash"
