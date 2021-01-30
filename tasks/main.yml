@@ -57,16 +57,7 @@
     - { dest: "/usr/local/bin" }
     - { dest: "/usr/local/maven" }
     - { dest: "{{ maven_download.dest | dirname }}" }
-
-- name: copy templates
-  template:
-    dest: "{{ item.dest }}"
-    src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0644') }}"
-  loop:
-    - { dest: "/etc/profile.d/java.sh" }
+  register: file_result
 
 - name: download archive
   vars:
@@ -79,12 +70,14 @@
     timeout: 300
   loop:
     - "{{ maven_download }}"
+  when: file_result is changed
   register: get_url_result
   until: get_url_result is succeeded
 
 - name: unarchive package
   shell: |
     set -euo pipefail
+    exec &> >(tee -a {{ maven_download.dest }}.log)
     rm -rf /usr/local/maven \
       && mkdir -p /usr/local/maven
     cd /usr/local/maven
@@ -98,7 +91,17 @@
     ln -fs /usr/local/maven/bin/mvn .
   args:
     executable: "/bin/bash"
-  when: get_url_result is changed
+    creates: "{{ maven_download.dest }}.log"
+
+- name: copy templates
+  template:
+    dest: "{{ item.dest }}"
+    src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+  loop:
+    - { dest: "/etc/profile.d/java.sh" }
 
 - name: prepare files
   file:

@@ -17,5 +17,5 @@
 _maven_download:
   "3.6.3":
     url: "https://apache.osuosl.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/apache-maven-3.6.3-bin.tar.gz"
-    checksum: "sha1:cc836dc7e64b113472df31996caaedf132969009"
+    dest: "/var/cache/ansible/26ad91d751b3a9a53087aefa743f4e16a17741d3915b219cf74112bf87a438c5/apache-maven-3.6.3-bin.tar.gz"
+    checksum: "sha256:26ad91d751b3a9a53087aefa743f4e16a17741d3915b219cf74112bf87a438c5"
