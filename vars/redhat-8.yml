@@ -16,15 +16,15 @@
 
 _rpm_key:
   "15":
-    - key: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - key: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       fingerprint: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
   "11":
-    - key: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - key: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       fingerprint: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
   "8":
-    - key: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - key: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       fingerprint: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
 
@@ -37,7 +37,7 @@ _yum_repository:
       enabled: true
       priority: "2"
       gpgcheck: true
-      gpgkey: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      gpgkey: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       state: "present"
   "11":
     - file: "adoptopenjdk"
@@ -47,7 +47,7 @@ _yum_repository:
       enabled: true
       priority: "2"
       gpgcheck: true
-      gpgkey: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      gpgkey: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       state: "present"
   "8":
     - file: "adoptopenjdk"
@@ -57,7 +57,7 @@ _yum_repository:
       enabled: true
       priority: "2"
       gpgcheck: true
-      gpgkey: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+      gpgkey: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       state: "present"
 
 _yum:

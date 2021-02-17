@@ -16,27 +16,27 @@
 
 _apt_key:
   "15":
-    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - url: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
   "11":
-    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - url: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
   "8":
-    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - url: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
 
 _apt_repository:
   "15":
-    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
       state: "present"
   "11":
-    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
       state: "present"
   "8":
-    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
       state: "present"
 
 _apt:
