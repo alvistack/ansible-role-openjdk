@@ -16,15 +16,15 @@
 
 _apt_key:
   "15":
-    - url: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
   "11":
-    - url: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
   "8":
-    - url: "http://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
 
@@ -41,10 +41,13 @@ _apt_repository:
 
 _apt:
   "15":
+    - { state: "latest", name: "tar" }
     - { state: "latest", name: "adoptopenjdk-15-hotspot" }
   "11":
+    - { state: "latest", name: "tar" }
     - { state: "latest", name: "adoptopenjdk-11-hotspot" }
   "8":
+    - { state: "latest", name: "tar" }
     - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:
