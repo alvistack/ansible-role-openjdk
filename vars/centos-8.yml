@@ -62,10 +62,13 @@ _yum_repository:
 
 _yum:
   "15":
+    - { state: "latest", name: "tar" }
     - { state: "latest", name: "adoptopenjdk-15-hotspot" }
   "11":
+    - { state: "latest", name: "tar" }
     - { state: "latest", name: "adoptopenjdk-11-hotspot" }
   "8":
+    - { state: "latest", name: "tar" }
     - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:

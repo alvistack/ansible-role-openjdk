@@ -30,21 +30,24 @@ _apt_key:
 
 _apt_repository:
   "15":
-    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
       state: "present"
   "11":
-    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
       state: "present"
   "8":
-    - repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main"
       state: "present"
 
 _apt:
   "15":
+    - { state: "latest", name: "tar" }
     - { state: "latest", name: "adoptopenjdk-15-hotspot" }
   "11":
+    - { state: "latest", name: "tar" }
     - { state: "latest", name: "adoptopenjdk-11-hotspot" }
   "8":
+    - { state: "latest", name: "tar" }
     - { state: "latest", name: "adoptopenjdk-8-hotspot" }
 
 _openjdk_home:
