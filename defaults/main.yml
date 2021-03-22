@@ -21,7 +21,7 @@ openjdk_release: "15"
 openjdk_home: "{{ _openjdk_home[openjdk_release] }}"
 
 # Maven version.
-maven_version: "3.6.3"
+maven_version: "3.8.0"
 
 # Maven download details.
 maven_download: "{{ _maven_download[maven_version] }}"
