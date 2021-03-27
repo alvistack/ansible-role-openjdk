@@ -30,13 +30,13 @@ _apt_key:
 
 _apt_repository:
   "15":
-    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ focal main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb focal main"
       state: "present"
   "11":
-    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ focal main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb focal main"
       state: "present"
   "8":
-    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ focal main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb focal main"
       state: "present"
 
 _apt:
