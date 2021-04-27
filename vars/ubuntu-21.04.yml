@@ -30,13 +30,13 @@ _apt_key:
 
 _apt_repository:
   "16":
-    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb groovy main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb hirsute main"
       state: "present"
   "11":
-    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb groovy main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb hirsute main"
       state: "present"
   "8":
-    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb groovy main"
+    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb hirsute main"
       state: "present"
 
 _apt:
