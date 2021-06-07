@@ -68,19 +68,19 @@
 - name: download archive
   shell: |
     set -euxo pipefail
+    mkdir -p /var/log/ansible
+    exec &> >(tee -a /var/log/ansible/{{ maven_download.checksum }}-get_url.log)
     TMP_DIR="$(mktemp -d)" \
       && cd $TMP_DIR \
-      && mkdir -p .{{ item.dest | dirname }} \
-      && curl -skL -m 300 {{ item.url }} > .{{ item.dest }} \
-      && echo -n "{{ item.checksum }} .{{ item.dest }}" | sha256sum -c - \
-      && mkdir -p {{ item.dest | dirname }} \
-      && mv .{{ item.dest }} {{ item.dest }} \
+      && mkdir -p .{{ maven_download.dest | dirname }} \
+      && curl -skL -m 300 {{ maven_download.url }} > .{{ maven_download.dest }} \
+      && echo -n "{{ maven_download.checksum }} .{{ maven_download.dest }}" | sha256sum -c - \
+      && mkdir -p {{ maven_download.dest | dirname }} \
+      && mv .{{ maven_download.dest }} {{ maven_download.dest }} \
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
-    creates: "{{ item.dest | dirname }}"
-  loop:
-    - "{{ maven_download }}"
+    creates: "/var/log/ansible/{{ maven_download.checksum }}-get_url.log"
   register: result
   until: result is succeeded
 
@@ -88,7 +88,7 @@
   shell: |
     set -euxo pipefail
     mkdir -p /var/log/ansible
-    exec &> >(tee -a /var/log/ansible/{{ maven_download.checksum }}.log)
+    exec &> >(tee -a /var/log/ansible/{{ maven_download.checksum }}-unarchive.log)
     rm -rf /usr/local/maven \
       && mkdir -p /usr/local/maven
     cd /usr/local/maven
@@ -102,7 +102,7 @@
     ln -fs /usr/local/maven/bin/mvn .
   args:
     executable: "/bin/bash"
-    creates: "/var/log/ansible/{{ maven_download.checksum }}.log"
+    creates: "/var/log/ansible/{{ maven_download.checksum }}-unarchive.log"
 
 - name: copy templates
   template:
