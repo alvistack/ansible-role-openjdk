@@ -17,15 +17,15 @@
 _zypper_repository:
   "16":
     - name: "AdoptOpenJDK"
-      repo: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.3/x86_64"
+      repo: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.2/x86_64"
       state: "present"
   "11":
     - name: "AdoptOpenJDK"
-      repo: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.3/x86_64"
+      repo: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.2/x86_64"
       state: "present"
   "8":
     - name: "AdoptOpenJDK"
-      repo: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.3/x86_64"
+      repo: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.2/x86_64"
       state: "present"
 
 _zypper:
