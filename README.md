@@ -1,9 +1,13 @@
 # Ansible Role for OpenJDK
 
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-openjdk/master)](https://gitlab.com/alvistack/ansible-role-openjdk/-/pipelines)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk/releases)
-[![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk/blob/master/LICENSE)
-[![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.openjdk-blue.svg)](https://galaxy.ansible.com/alvistack/openjdk)
+[![Gitlab pipeline
+status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-openjdk/master)](https://gitlab.com/alvistack/ansible-role-openjdk/-/pipelines)
+[![GitHub
+release](https://img.shields.io/github/release/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk/releases)
+[![GitHub
+license](https://img.shields.io/github/license/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk/blob/master/LICENSE)
+[![Ansible
+Role](https://img.shields.io/badge/galaxy-alvistack.openjdk-blue.svg)](https://galaxy.ansible.com/alvistack/openjdk)
 
 Ansible Role for OpenJDK Installation.
 
@@ -39,7 +43,8 @@ This role could simply deploy to `localhost` as below:
 ## License
 
   - Code released under [Apache License 2.0](LICENSE)
-  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+  - Docs released under [CC
+    BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
