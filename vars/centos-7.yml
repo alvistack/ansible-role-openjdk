@@ -31,9 +31,9 @@ _rpm_key:
 _yum_repository:
   "16":
     - file: "adoptopenjdk"
-      name: "AdoptOpenJDK"
-      description: "AdoptOpenJDK"
-      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/7/x86_64"
+      name: "adoptopenjdk"
+      description: "adoptopenjdk"
+      baseurl: "https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/7/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -42,9 +42,9 @@ _yum_repository:
       state: "present"
   "11":
     - file: "adoptopenjdk"
-      name: "AdoptOpenJDK"
-      description: "AdoptOpenJDK"
-      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/7/x86_64"
+      name: "adoptopenjdk"
+      description: "adoptopenjdk"
+      baseurl: "https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/7/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -53,9 +53,9 @@ _yum_repository:
       state: "present"
   "8":
     - file: "adoptopenjdk"
-      name: "AdoptOpenJDK"
-      description: "AdoptOpenJDK"
-      baseurl: "http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/7/x86_64"
+      name: "adoptopenjdk"
+      description: "adoptopenjdk"
+      baseurl: "https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/7/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
