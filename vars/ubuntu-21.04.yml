@@ -16,27 +16,33 @@
 
 _apt_key:
   "16":
-    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - keyring: "/etc/apt/trusted.gpg.d/adoptopenjdk.gpg"
+      url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
   "11":
-    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - keyring: "/etc/apt/trusted.gpg.d/adoptopenjdk.gpg"
+      url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
   "8":
-    - url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    - keyring: "/etc/apt/trusted.gpg.d/adoptopenjdk.gpg"
+      url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
       id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
       state: "present"
 
 _apt_repository:
   "16":
-    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb hirsute main"
+    - filename: "adoptopenjdk"
+      repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb hirsute main"
       state: "present"
   "11":
-    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb hirsute main"
+    - filename: "adoptopenjdk"
+      repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb hirsute main"
       state: "present"
   "8":
-    - repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb hirsute main"
+    - filename: "adoptopenjdk"
+      repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb hirsute main"
       state: "present"
 
 _apt:
