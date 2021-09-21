@@ -1,5 +1,7 @@
 # Ansible Role for OpenJDK
 
+<img src="/alvistack.svg" width="75" alt="AlviStack">
+
 [![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-openjdk/master)](https://gitlab.com/alvistack/ansible-role-openjdk/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-openjdk.svg)](https://github.com/alvistack/ansible-role-openjdk/blob/master/LICENSE)
