@@ -15,10 +15,14 @@
 # limitations under the License.
 
 _maven_version:
-  "3.8": "3.8.2"
+  "3.8": "3.8.3"
   "3.6": "3.6.3"
 
 _maven_download:
+  "3.8.3":
+    url: "http://apache.osuosl.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz"
+    dest: "/var/cache/ansible/41d5bb6510ed610eb5bfca84818b6159b2a0297b599161fc6d1d409a10770df9/apache-maven-3.8.3-bin.tar.gz"
+    checksum: "41d5bb6510ed610eb5bfca84818b6159b2a0297b599161fc6d1d409a10770df9"
   "3.8.2":
     url: "http://apache.osuosl.org/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin.tar.gz"
     dest: "/var/cache/ansible/8dae10b09feb7b8e4c079fc39a11f3296ab630fd9bc44ecea0fb288cec7770f7/apache-maven-3.8.2-bin.tar.gz"
