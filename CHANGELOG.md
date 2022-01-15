@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Replace AdoptOpenJDK with Eclipse Temurin
   - Skip package upgrade before running molecule
   - Support Fedora Rawhide
   - Support Debian Testing

@@ -15,45 +15,45 @@
 # limitations under the License.
 
 _apt_key:
-  "16":
-    - keyring: "/etc/apt/trusted.gpg.d/adoptopenjdk.gpg"
-      url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
-      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+  "17":
+    - keyring: "/etc/apt/trusted.gpg.d/adoptium.gpg"
+      url: "https://adoptium.jfrog.io/artifactory/api/security/keypair/default-gpg-key/public"
+      id: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
   "11":
-    - keyring: "/etc/apt/trusted.gpg.d/adoptopenjdk.gpg"
-      url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
-      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+    - keyring: "/etc/apt/trusted.gpg.d/adoptium.gpg"
+      url: "https://adoptium.jfrog.io/artifactory/api/security/keypair/default-gpg-key/public"
+      id: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
   "8":
-    - keyring: "/etc/apt/trusted.gpg.d/adoptopenjdk.gpg"
-      url: "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
-      id: "8ED17AF5D7E675EB3EE3BCE98AC3B29174885C03"
+    - keyring: "/etc/apt/trusted.gpg.d/adoptium.gpg"
+      url: "https://adoptium.jfrog.io/artifactory/api/security/keypair/default-gpg-key/public"
+      id: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
 
 _apt_repository:
-  "16":
-    - filename: "adoptopenjdk"
-      repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb focal main"
+  "17":
+    - filename: "adoptium"
+      repo: "deb https://adoptium.jfrog.io/artifactory/deb focal main"
       state: "present"
   "11":
-    - filename: "adoptopenjdk"
-      repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb focal main"
+    - filename: "adoptium"
+      repo: "deb https://adoptium.jfrog.io/artifactory/deb focal main"
       state: "present"
   "8":
-    - filename: "adoptopenjdk"
-      repo: "deb http://adoptopenjdk.jfrog.io/adoptopenjdk/deb focal main"
+    - filename: "adoptium"
+      repo: "deb https://adoptium.jfrog.io/artifactory/deb focal main"
       state: "present"
 
 _apt:
-  "16":
-    - { state: "latest", name: "adoptopenjdk-16-hotspot" }
+  "17":
+    - { state: "latest", name: "temurin-17-jdk" }
   "11":
-    - { state: "latest", name: "adoptopenjdk-11-hotspot" }
+    - { state: "latest", name: "temurin-11-jdk" }
   "8":
-    - { state: "latest", name: "adoptopenjdk-8-hotspot" }
+    - { state: "latest", name: "temurin-8-jdk" }
 
 _openjdk_home:
-  "16": "/usr/lib/jvm/adoptopenjdk-16-hotspot-amd64"
-  "11": "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
-  "8": "/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64"
+  "17": "/usr/lib/jvm/temurin-17-jdk-amd64"
+  "11": "/usr/lib/jvm/temurin-11-jdk-amd64"
+  "8": "/usr/lib/jvm/temurin-8-jdk-amd64"
