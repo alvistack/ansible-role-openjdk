@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Remove Ubuntu 21.04 support
   - Replace AdoptOpenJDK with Eclipse Temurin
   - Skip package upgrade before running molecule
   - Support Fedora Rawhide
