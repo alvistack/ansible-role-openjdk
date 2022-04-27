@@ -20,5 +20,5 @@
   tasks:
     - name: include role
       ansible.builtin.include_role:
-        name: openjdk
-      tags: openjdk
+        name: alvistack.openjdk
+      tags: alvistack.openjdk

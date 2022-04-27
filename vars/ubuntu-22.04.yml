@@ -34,15 +34,15 @@ _apt_key:
 _apt_repository:
   "17":
     - filename: "adoptium"
-      repo: "deb https://adoptium.jfrog.io/artifactory/deb hirsute main"
+      repo: "deb https://adoptium.jfrog.io/artifactory/deb focal main"
       state: "present"
   "11":
     - filename: "adoptium"
-      repo: "deb https://adoptium.jfrog.io/artifactory/deb hirsute main"
+      repo: "deb https://adoptium.jfrog.io/artifactory/deb focal main"
       state: "present"
   "8":
     - filename: "adoptium"
-      repo: "deb https://adoptium.jfrog.io/artifactory/deb hirsute main"
+      repo: "deb https://adoptium.jfrog.io/artifactory/deb focal main"
       state: "present"
 
 _apt:
