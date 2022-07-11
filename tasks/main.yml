@@ -62,47 +62,6 @@
     state: "{{ item.state | default('directory') }}"
   loop:
     - { dest: "/etc/profile.d" }
-    - { dest: "/usr/local/bin" }
-    - { dest: "/usr/local/maven" }
-
-- name: download archive
-  ansible.builtin.shell: |
-    set -euxo pipefail
-    mkdir -p /var/log/ansible
-    exec &> >(tee -a /var/log/ansible/{{ maven_download.checksum }}-get_url.log)
-    TMP_DIR="$(mktemp -d)" \
-      && cd $TMP_DIR \
-      && mkdir -p .{{ maven_download.dest | dirname }} \
-      && curl -skL -m 300 {{ maven_download.url }} > .{{ maven_download.dest }} \
-      && echo -n "{{ maven_download.checksum }} .{{ maven_download.dest }}" | sha256sum -c - \
-      && mkdir -p {{ maven_download.dest | dirname }} \
-      && mv .{{ maven_download.dest }} {{ maven_download.dest }} \
-      && rm -rf $TMP_DIR
-  args:
-    executable: "/bin/bash"
-    creates: "/var/log/ansible/{{ maven_download.checksum }}-get_url.log"
-  register: result
-  until: result is succeeded
-
-- name: unarchive package
-  ansible.builtin.shell: |
-    set -euxo pipefail
-    mkdir -p /var/log/ansible
-    exec &> >(tee -a /var/log/ansible/{{ maven_download.checksum }}-unarchive.log)
-    rm -rf /usr/local/maven \
-      && mkdir -p /usr/local/maven
-    cd /usr/local/maven
-    TMP_DIR="$(mktemp -d)" \
-      && tar -zx -C $TMP_DIR -f {{ maven_download.dest }} \
-      && chown root:root $TMP_DIR/* \
-      && chmod 0755 $TMP_DIR/*/bin/* \
-      && cp -rfT $TMP_DIR/* . \
-      && rm -rf $TMP_DIR
-    cd /usr/local/bin
-    ln -fs /usr/local/maven/bin/mvn .
-  args:
-    executable: "/bin/bash"
-    creates: "/var/log/ansible/{{ maven_download.checksum }}-unarchive.log"
 
 - name: copy templates
   ansible.builtin.template:
@@ -113,14 +72,3 @@
     mode: "{{ item.mode | default('0644') }}"
   loop:
     - { dest: "/etc/profile.d/java.sh" }
-
-- name: prepare files
-  ansible.builtin.file:
-    dest: "{{ item.dest }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0644') }}"
-    state: "{{ item.state | default('file') }}"
-  loop:
-    - { dest: "/usr/local/bin/mvn", mode: "0755", state: "link" }
-    - { dest: "/usr/local/maven/bin/mvn", mode: "0755" }
