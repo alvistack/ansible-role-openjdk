@@ -70,12 +70,18 @@ _apt:
   "17":
     - { state: "latest", name: "temurin-17-jdk" }
     - { state: "latest", name: "maven" }
+    - { state: "latest", name: "mysql-connector-java" }
+    - { state: "latest", name: "libpostgresql-jdbc-java" }
   "11":
     - { state: "latest", name: "temurin-11-jdk" }
     - { state: "latest", name: "maven" }
+    - { state: "latest", name: "mysql-connector-java" }
+    - { state: "latest", name: "libpostgresql-jdbc-java" }
   "8":
     - { state: "latest", name: "temurin-8-jdk" }
     - { state: "latest", name: "maven" }
+    - { state: "latest", name: "mysql-connector-java" }
+    - { state: "latest", name: "libpostgresql-jdbc-java" }
 
 _openjdk_home:
   "17": "/usr/lib/jvm/temurin-17-jdk-amd64"

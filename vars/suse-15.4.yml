@@ -106,12 +106,18 @@ _zypper:
   "17":
     - { state: "latest", name: "temurin-17-jdk" }
     - { state: "latest", name: "maven" }
+    - { state: "latest", name: "mysql-connector-java" }
+    - { state: "latest", name: "postgresql-jdbc" }
   "11":
     - { state: "latest", name: "temurin-11-jdk" }
     - { state: "latest", name: "maven" }
+    - { state: "latest", name: "mysql-connector-java" }
+    - { state: "latest", name: "postgresql-jdbc" }
   "8":
     - { state: "latest", name: "temurin-8-jdk" }
     - { state: "latest", name: "maven" }
+    - { state: "latest", name: "mysql-connector-java" }
+    - { state: "latest", name: "postgresql-jdbc" }
 
 _openjdk_home:
   "17": "/usr/lib64/jvm/temurin-17-jdk"
