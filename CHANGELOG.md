@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Support Ansible community package 6.1.0
   - Revamp jdbc related with OBS repo
   - Revamp maven related with OBS repo
   - Remove Ubuntu 21.10 support
