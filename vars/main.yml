@@ -13,17 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-_maven_version:
-  "3.8": "3.8.6"
-  "3.6": "3.6.3"
-
-_maven_download:
-  "3.8.6":
-    url: "http://apache.osuosl.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz"
-    dest: "/var/cache/ansible/c7047a48deb626abf26f71ab3643d296db9b1e67f1faa7d988637deac876b5a9/apache-maven-3.8.6-bin.tar.gz"
-    checksum: "c7047a48deb626abf26f71ab3643d296db9b1e67f1faa7d988637deac876b5a9"
-  "3.6.3":
-    url: "http://apache.osuosl.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz"
-    dest: "/var/cache/ansible/26ad91d751b3a9a53087aefa743f4e16a17741d3915b219cf74112bf87a438c5/apache-maven-3.6.3-bin.tar.gz"
-    checksum: "26ad91d751b3a9a53087aefa743f4e16a17741d3915b219cf74112bf87a438c5"

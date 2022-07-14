@@ -16,20 +16,39 @@
 
 _rpm_key:
   "17":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_8_Stream/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "https://adoptium.jfrog.io/artifactory/rpm/centos/8/x86_64/repodata/repomd.xml.key"
       fingerprint: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
   "11":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_8_Stream/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "https://adoptium.jfrog.io/artifactory/rpm/centos/8/x86_64/repodata/repomd.xml.key"
       fingerprint: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
   "8":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_8_Stream/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "https://adoptium.jfrog.io/artifactory/rpm/centos/8/x86_64/repodata/repomd.xml.key"
       fingerprint: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
 
 _yum_repository:
   "17":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (CentOS_8_Stream)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_8_Stream"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_8_Stream/repodata/repomd.xml.key"
+      state: "present"
     - file: "adoptium"
       name: "adoptium"
       description: "adoptium"
@@ -41,6 +60,16 @@ _yum_repository:
       gpgkey: "https://adoptium.jfrog.io/artifactory/rpm/centos/8/x86_64/repodata/repomd.xml.key"
       state: "present"
   "11":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (CentOS_8_Stream)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_8_Stream"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_8_Stream/repodata/repomd.xml.key"
+      state: "present"
     - file: "adoptium"
       name: "adoptium"
       description: "adoptium"
@@ -52,6 +81,16 @@ _yum_repository:
       gpgkey: "https://adoptium.jfrog.io/artifactory/rpm/centos/8/x86_64/repodata/repomd.xml.key"
       state: "present"
   "8":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (CentOS_8_Stream)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_8_Stream"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_8_Stream/repodata/repomd.xml.key"
+      state: "present"
     - file: "adoptium"
       name: "adoptium"
       description: "adoptium"
@@ -66,10 +105,19 @@ _yum_repository:
 _yum:
   "17":
     - { state: "latest", name: "temurin-17-jdk" }
+    - { state: "latest", name: "maven" }
+    - { state: "latest", name: "mysql-connector-java" }
+    - { state: "latest", name: "postgresql-jdbc" }
   "11":
     - { state: "latest", name: "temurin-11-jdk" }
+    - { state: "latest", name: "maven" }
+    - { state: "latest", name: "mysql-connector-java" }
+    - { state: "latest", name: "postgresql-jdbc" }
   "8":
     - { state: "latest", name: "temurin-8-jdk" }
+    - { state: "latest", name: "maven" }
+    - { state: "latest", name: "mysql-connector-java" }
+    - { state: "latest", name: "postgresql-jdbc" }
 
 _openjdk_home:
   "17": "/usr/lib/jvm/temurin-17-jdk"
