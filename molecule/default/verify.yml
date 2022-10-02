@@ -20,21 +20,24 @@
   become: true
   tasks:
     - name: java -version
-      ansible.builtin.command: java -version
+      ansible.builtin.command:
+        cmd: java -version
       register: result
       changed_when: result is not succeeded
 
     - name: $JAVA_HOME/bin/java -version
-      ansible.builtin.shell: |
-        set -euxo pipefail
-        source /etc/profile.d/java.sh
-        $JAVA_HOME/bin/java -version
+      ansible.builtin.shell:
+        cmd: |
+          set -euxo pipefail
+          source /etc/profile.d/java.sh
+          $JAVA_HOME/bin/java -version
       args:
         executable: "/bin/bash"
       register: result
       changed_when: result is not succeeded
 
     - name: mvn --version
-      ansible.builtin.command: mvn --version
+      ansible.builtin.command:
+        cmd: mvn --version
       register: result
       changed_when: result is not succeeded
