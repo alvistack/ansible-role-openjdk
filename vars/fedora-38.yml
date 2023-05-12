@@ -19,21 +19,21 @@ _rpm_key:
     - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_38/repodata/repomd.xml.key"
       fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
-    - key: "https://adoptium.jfrog.io/artifactory/rpm/fedora/36/x86_64/repodata/repomd.xml.key"
+    - key: "https://adoptium.jfrog.io/artifactory/rpm/fedora/37/x86_64/repodata/repomd.xml.key"
       fingerprint: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
   "11":
     - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_38/repodata/repomd.xml.key"
       fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
-    - key: "https://adoptium.jfrog.io/artifactory/rpm/fedora/36/x86_64/repodata/repomd.xml.key"
+    - key: "https://adoptium.jfrog.io/artifactory/rpm/fedora/37/x86_64/repodata/repomd.xml.key"
       fingerprint: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
   "8":
     - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_38/repodata/repomd.xml.key"
       fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
-    - key: "https://adoptium.jfrog.io/artifactory/rpm/fedora/36/x86_64/repodata/repomd.xml.key"
+    - key: "https://adoptium.jfrog.io/artifactory/rpm/fedora/37/x86_64/repodata/repomd.xml.key"
       fingerprint: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
 
@@ -52,12 +52,12 @@ _yum_repository:
     - file: "adoptium"
       name: "adoptium"
       description: "adoptium"
-      baseurl: "https://adoptium.jfrog.io/artifactory/rpm/fedora/36/x86_64"
+      baseurl: "https://adoptium.jfrog.io/artifactory/rpm/fedora/37/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "https://adoptium.jfrog.io/artifactory/rpm/fedora/36/x86_64/repodata/repomd.xml.key"
+      gpgkey: "https://adoptium.jfrog.io/artifactory/rpm/fedora/37/x86_64/repodata/repomd.xml.key"
       state: "present"
   "11":
     - file: "home:alvistack"
@@ -73,12 +73,12 @@ _yum_repository:
     - file: "adoptium"
       name: "adoptium"
       description: "adoptium"
-      baseurl: "https://adoptium.jfrog.io/artifactory/rpm/fedora/36/x86_64"
+      baseurl: "https://adoptium.jfrog.io/artifactory/rpm/fedora/37/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "https://adoptium.jfrog.io/artifactory/rpm/fedora/36/x86_64/repodata/repomd.xml.key"
+      gpgkey: "https://adoptium.jfrog.io/artifactory/rpm/fedora/37/x86_64/repodata/repomd.xml.key"
       state: "present"
   "8":
     - file: "home:alvistack"
@@ -94,12 +94,12 @@ _yum_repository:
     - file: "adoptium"
       name: "adoptium"
       description: "adoptium"
-      baseurl: "https://adoptium.jfrog.io/artifactory/rpm/fedora/36/x86_64"
+      baseurl: "https://adoptium.jfrog.io/artifactory/rpm/fedora/37/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "https://adoptium.jfrog.io/artifactory/rpm/fedora/36/x86_64/repodata/repomd.xml.key"
+      gpgkey: "https://adoptium.jfrog.io/artifactory/rpm/fedora/37/x86_64/repodata/repomd.xml.key"
       state: "present"
 
 _yum:
