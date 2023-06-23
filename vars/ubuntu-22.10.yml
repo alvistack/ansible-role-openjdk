@@ -49,21 +49,21 @@ _apt_repository:
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
       state: "present"
     - filename: "adoptium"
-      repo: "deb https://adoptium.jfrog.io/artifactory/deb jammy main"
+      repo: "deb https://adoptium.jfrog.io/artifactory/deb kinetic main"
       state: "present"
   "11":
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
       state: "present"
     - filename: "adoptium"
-      repo: "deb https://adoptium.jfrog.io/artifactory/deb jammy main"
+      repo: "deb https://adoptium.jfrog.io/artifactory/deb kinetic main"
       state: "present"
   "8":
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
       state: "present"
     - filename: "adoptium"
-      repo: "deb https://adoptium.jfrog.io/artifactory/deb jammy main"
+      repo: "deb https://adoptium.jfrog.io/artifactory/deb kinetic main"
       state: "present"
 
 _apt:
