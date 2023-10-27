@@ -21,7 +21,7 @@ _apt_key:
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - keyring: "/etc/apt/trusted.gpg.d/adoptium.gpg"
-      url: "https://adoptium.jfrog.io/artifactory/api/security/keypair/default-gpg-key/public"
+      url: "https://packages.adoptium.net/artifactory/api/gpg/key/public"
       id: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
   "11":
@@ -30,7 +30,7 @@ _apt_key:
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - keyring: "/etc/apt/trusted.gpg.d/adoptium.gpg"
-      url: "https://adoptium.jfrog.io/artifactory/api/security/keypair/default-gpg-key/public"
+      url: "https://packages.adoptium.net/artifactory/api/gpg/key/public"
       id: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
   "8":
@@ -39,7 +39,7 @@ _apt_key:
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - keyring: "/etc/apt/trusted.gpg.d/adoptium.gpg"
-      url: "https://adoptium.jfrog.io/artifactory/api/security/keypair/default-gpg-key/public"
+      url: "https://packages.adoptium.net/artifactory/api/gpg/key/public"
       id: "3B04D753C9050D9A5D343F39843C48A565F8F04B"
       state: "present"
 
@@ -49,21 +49,21 @@ _apt_repository:
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.04/ /"
       state: "present"
     - filename: "adoptium"
-      repo: "deb https://adoptium.jfrog.io/artifactory/deb jammy main"
+      repo: "deb https://packages.adoptium.net/artifactory/deb jammy main"
       state: "present"
   "11":
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.04/ /"
       state: "present"
     - filename: "adoptium"
-      repo: "deb https://adoptium.jfrog.io/artifactory/deb jammy main"
+      repo: "deb https://packages.adoptium.net/artifactory/deb jammy main"
       state: "present"
   "8":
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.04/ /"
       state: "present"
     - filename: "adoptium"
-      repo: "deb https://adoptium.jfrog.io/artifactory/deb jammy main"
+      repo: "deb https://packages.adoptium.net/artifactory/deb jammy main"
       state: "present"
 
 _apt:
