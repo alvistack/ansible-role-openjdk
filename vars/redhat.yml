@@ -52,7 +52,7 @@ _yum_repository:
     - file: "adoptium"
       name: "adoptium"
       description: "adoptium"
-      baseurl: "https://packages.adoptium.net/artifactory/rpm/fedora/37/x86_64"
+      baseurl: "https://packages.adoptium.net/artifactory/rpm/fedora/38/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -73,7 +73,7 @@ _yum_repository:
     - file: "adoptium"
       name: "adoptium"
       description: "adoptium"
-      baseurl: "https://packages.adoptium.net/artifactory/rpm/fedora/37/x86_64"
+      baseurl: "https://packages.adoptium.net/artifactory/rpm/fedora/38/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -94,7 +94,7 @@ _yum_repository:
     - file: "adoptium"
       name: "adoptium"
       description: "adoptium"
-      baseurl: "https://packages.adoptium.net/artifactory/rpm/fedora/37/x86_64"
+      baseurl: "https://packages.adoptium.net/artifactory/rpm/fedora/38/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
