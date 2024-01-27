@@ -2,6 +2,7 @@
 
 ## 9.2.0 - TBC
 
+-   Support OpenJDK 21
 -   Remove Ubuntu 23.04 support
 
 ## 9.1.0 - 2023-12-25
