@@ -1,7 +1,11 @@
 # Ansible Role for OpenJDK
 
-## 9.2.0 - TBC
+## 9.3.0 - TBC
 
+## 9.2.0 - 2024-01-31
+
+-   Support Ansible community package 9.2.0
+-   Support OpenJDK 21
 -   Remove Ubuntu 23.04 support
 
 ## 9.1.0 - 2023-12-25
