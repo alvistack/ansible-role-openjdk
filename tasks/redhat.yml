@@ -37,7 +37,7 @@
   loop: "{{ _yum_repository[openjdk_release] }}"
 
 - name: yum install
-  ansible.legacy.dnf:
+  ansible.builtin.yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   loop: "{{ _yum[openjdk_release] }}"
