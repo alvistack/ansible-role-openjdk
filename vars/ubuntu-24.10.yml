@@ -58,28 +58,28 @@ _apt_repository:
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/ /
       state: present
     - filename: adoptium
-      repo: deb https://packages.adoptium.net/artifactory/deb oracular main
+      repo: deb https://packages.adoptium.net/artifactory/deb noble main
       state: present
   "17":
     - filename: home:alvistack
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/ /
       state: present
     - filename: adoptium
-      repo: deb https://packages.adoptium.net/artifactory/deb oracular main
+      repo: deb https://packages.adoptium.net/artifactory/deb noble main
       state: present
   "11":
     - filename: home:alvistack
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/ /
       state: present
     - filename: adoptium
-      repo: deb https://packages.adoptium.net/artifactory/deb oracular main
+      repo: deb https://packages.adoptium.net/artifactory/deb noble main
       state: present
   "8":
     - filename: home:alvistack
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/ /
       state: present
     - filename: adoptium
-      repo: deb https://packages.adoptium.net/artifactory/deb oracular main
+      repo: deb https://packages.adoptium.net/artifactory/deb noble main
       state: present
 
 _apt:
