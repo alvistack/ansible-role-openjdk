@@ -19,7 +19,7 @@ _deb822_repository:
     - name: adoptium
       types: deb
       uris: https://packages.adoptium.net/artifactory/deb
-      suites: noble
+      suites: oracular
       components: main
       signed_by: https://packages.adoptium.net/artifactory/api/gpg/key/public
       enabled: true
@@ -36,7 +36,7 @@ _deb822_repository:
     - name: adoptium
       types: deb
       uris: https://packages.adoptium.net/artifactory/deb
-      suites: noble
+      suites: oracular
       components: main
       signed_by: https://packages.adoptium.net/artifactory/api/gpg/key/public
       enabled: true
@@ -53,7 +53,7 @@ _deb822_repository:
     - name: adoptium
       types: deb
       uris: https://packages.adoptium.net/artifactory/deb
-      suites: noble
+      suites: oracular
       components: main
       signed_by: https://packages.adoptium.net/artifactory/api/gpg/key/public
       enabled: true
@@ -70,7 +70,7 @@ _deb822_repository:
     - name: adoptium
       types: deb
       uris: https://packages.adoptium.net/artifactory/deb
-      suites: noble
+      suites: oracular
       components: main
       signed_by: https://packages.adoptium.net/artifactory/api/gpg/key/public
       enabled: true
