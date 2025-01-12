@@ -28,7 +28,7 @@ _deb822_repository:
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04
       suites: /
-      components: ~
+      components:
       signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
       enabled: true
       state: present
@@ -45,7 +45,7 @@ _deb822_repository:
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04
       suites: /
-      components: ~
+      components:
       signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
       enabled: true
       state: present
@@ -62,7 +62,7 @@ _deb822_repository:
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04
       suites: /
-      components: ~
+      components:
       signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
       enabled: true
       state: present
@@ -79,7 +79,7 @@ _deb822_repository:
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04
       suites: /
-      components: ~
+      components:
       signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
       enabled: true
       state: present
