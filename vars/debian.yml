@@ -14,72 +14,74 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt_key:
+_deb822_repository:
   "21":
-    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
-      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+    - name: adoptium
+      types: deb
+      uris: https://packages.adoptium.net/artifactory/deb
+      suites: bookworm
+      components: main
+      signed_by: https://packages.adoptium.net/artifactory/api/gpg/key/public
+      enabled: true
       state: present
-    - keyring: /etc/apt/trusted.gpg.d/adoptium.gpg
-      url: https://packages.adoptium.net/artifactory/api/gpg/key/public
-      id: 3B04D753C9050D9A5D343F39843C48A565F8F04B
+    - name: alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
+      suites: /
+      components:
+      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      enabled: true
       state: present
   "17":
-    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
-      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+    - name: adoptium
+      types: deb
+      uris: https://packages.adoptium.net/artifactory/deb
+      suites: bookworm
+      components: main
+      signed_by: https://packages.adoptium.net/artifactory/api/gpg/key/public
+      enabled: true
       state: present
-    - keyring: /etc/apt/trusted.gpg.d/adoptium.gpg
-      url: https://packages.adoptium.net/artifactory/api/gpg/key/public
-      id: 3B04D753C9050D9A5D343F39843C48A565F8F04B
-      state: present
-  "11":
-    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
-      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
-    - keyring: /etc/apt/trusted.gpg.d/adoptium.gpg
-      url: https://packages.adoptium.net/artifactory/api/gpg/key/public
-      id: 3B04D753C9050D9A5D343F39843C48A565F8F04B
-      state: present
-  "8":
-    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
-      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
-    - keyring: /etc/apt/trusted.gpg.d/adoptium.gpg
-      url: https://packages.adoptium.net/artifactory/api/gpg/key/public
-      id: 3B04D753C9050D9A5D343F39843C48A565F8F04B
-      state: present
-
-_apt_repository:
-  "21":
-    - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/ /
-      state: present
-    - filename: adoptium
-      repo: deb https://packages.adoptium.net/artifactory/deb bookworm main
-      state: present
-  "17":
-    - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/ /
-      state: present
-    - filename: adoptium
-      repo: deb https://packages.adoptium.net/artifactory/deb bookworm main
+    - name: alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
+      suites: /
+      components:
+      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      enabled: true
       state: present
   "11":
-    - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/ /
+    - name: adoptium
+      types: deb
+      uris: https://packages.adoptium.net/artifactory/deb
+      suites: bookworm
+      components: main
+      signed_by: https://packages.adoptium.net/artifactory/api/gpg/key/public
+      enabled: true
       state: present
-    - filename: adoptium
-      repo: deb https://packages.adoptium.net/artifactory/deb bookworm main
+    - name: alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
+      suites: /
+      components:
+      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      enabled: true
       state: present
   "8":
-    - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/ /
+    - name: adoptium
+      types: deb
+      uris: https://packages.adoptium.net/artifactory/deb
+      suites: bookworm
+      components: main
+      signed_by: https://packages.adoptium.net/artifactory/api/gpg/key/public
+      enabled: true
       state: present
-    - filename: adoptium
-      repo: deb https://packages.adoptium.net/artifactory/deb bookworm main
+    - name: alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
+      suites: /
+      components:
+      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      enabled: true
       state: present
 
 _apt:
