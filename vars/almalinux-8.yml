@@ -59,7 +59,7 @@ _yum_repository:
     - file: adoptium
       name: adoptium
       description: adoptium
-      baseurl: https://packages.adoptium.net/artifactory/rpm/centos/8/x86_64
+      baseurl: https://packages.adoptium.net/artifactory/rpm/rhel/8/x86_64
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -80,7 +80,7 @@ _yum_repository:
     - file: adoptium
       name: adoptium
       description: adoptium
-      baseurl: https://packages.adoptium.net/artifactory/rpm/centos/8/x86_64
+      baseurl: https://packages.adoptium.net/artifactory/rpm/rhel/8/x86_64
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -101,7 +101,7 @@ _yum_repository:
     - file: adoptium
       name: adoptium
       description: adoptium
-      baseurl: https://packages.adoptium.net/artifactory/rpm/centos/8/x86_64
+      baseurl: https://packages.adoptium.net/artifactory/rpm/rhel/8/x86_64
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -122,7 +122,7 @@ _yum_repository:
     - file: adoptium
       name: adoptium
       description: adoptium
-      baseurl: https://packages.adoptium.net/artifactory/rpm/centos/8/x86_64
+      baseurl: https://packages.adoptium.net/artifactory/rpm/rhel/8/x86_64
       enabled: true
       priority: "2"
       module_hotfixes: true
