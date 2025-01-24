@@ -20,28 +20,28 @@ _apt_key:
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
-      dest: /etc/apt/keyrings/home_alvistack.asc
+      dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "17":
     - url: https://packages.adoptium.net/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
-      dest: /etc/apt/keyrings/home_alvistack.asc
+      dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "11":
     - url: https://packages.adoptium.net/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
-      dest: /etc/apt/keyrings/home_alvistack.asc
+      dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "8":
     - url: https://packages.adoptium.net/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
-      dest: /etc/apt/keyrings/home_alvistack.asc
+      dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
 
 _deb822_repository:
@@ -54,12 +54,12 @@ _deb822_repository:
       signed_by: /etc/apt/keyrings/adoptium.asc
       enabled: true
       state: present
-    - name: home_alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04
       suites: /
       components:
-      signed_by: /etc/apt/keyrings/home_alvistack.asc
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "17":
@@ -71,12 +71,12 @@ _deb822_repository:
       signed_by: /etc/apt/keyrings/adoptium.asc
       enabled: true
       state: present
-    - name: home_alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04
       suites: /
       components:
-      signed_by: /etc/apt/keyrings/home_alvistack.asc
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "11":
@@ -88,12 +88,12 @@ _deb822_repository:
       signed_by: /etc/apt/keyrings/adoptium.asc
       enabled: true
       state: present
-    - name: home_alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04
       suites: /
       components:
-      signed_by: /etc/apt/keyrings/home_alvistack.asc
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "8":
@@ -105,12 +105,12 @@ _deb822_repository:
       signed_by: /etc/apt/keyrings/adoptium.asc
       enabled: true
       state: present
-    - name: home_alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04
       suites: /
       components:
-      signed_by: /etc/apt/keyrings/home_alvistack.asc
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
 
