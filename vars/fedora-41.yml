@@ -20,28 +20,28 @@ _rpm_key:
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
     - key: https://packages.adoptium.net/artifactory/api/gpg/key/public
-      fingerprint: 3B04D753C9050D9A5D343F40843C48A565F8F04B
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "17":
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_41/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
     - key: https://packages.adoptium.net/artifactory/api/gpg/key/public
-      fingerprint: 3B04D753C9050D9A5D343F40843C48A565F8F04B
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "11":
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_41/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
     - key: https://packages.adoptium.net/artifactory/api/gpg/key/public
-      fingerprint: 3B04D753C9050D9A5D343F40843C48A565F8F04B
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "8":
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_41/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
     - key: https://packages.adoptium.net/artifactory/api/gpg/key/public
-      fingerprint: 3B04D753C9050D9A5D343F40843C48A565F8F04B
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
 
 _yum_repository:
