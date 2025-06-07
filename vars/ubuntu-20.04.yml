@@ -16,28 +16,28 @@
 
 _apt_key:
   "21":
-    - url: https://packages.adoptium.net/artifactory/api/gpg/key/public
+    - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "17":
-    - url: https://packages.adoptium.net/artifactory/api/gpg/key/public
+    - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "11":
-    - url: https://packages.adoptium.net/artifactory/api/gpg/key/public
+    - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "8":
-    - url: https://packages.adoptium.net/artifactory/api/gpg/key/public
+    - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
@@ -48,7 +48,7 @@ _deb822_repository:
   "21":
     - name: adoptium
       types: deb
-      uris: https://packages.adoptium.net/artifactory/deb
+      uris: https://adoptium.jfrog.io/artifactory/deb
       suites: focal
       components: main
       signed_by: /etc/apt/keyrings/adoptium.asc
@@ -65,7 +65,7 @@ _deb822_repository:
   "17":
     - name: adoptium
       types: deb
-      uris: https://packages.adoptium.net/artifactory/deb
+      uris: https://adoptium.jfrog.io/artifactory/deb
       suites: focal
       components: main
       signed_by: /etc/apt/keyrings/adoptium.asc
@@ -82,7 +82,7 @@ _deb822_repository:
   "11":
     - name: adoptium
       types: deb
-      uris: https://packages.adoptium.net/artifactory/deb
+      uris: https://adoptium.jfrog.io/artifactory/deb
       suites: focal
       components: main
       signed_by: /etc/apt/keyrings/adoptium.asc
@@ -99,7 +99,7 @@ _deb822_repository:
   "8":
     - name: adoptium
       types: deb
-      uris: https://packages.adoptium.net/artifactory/deb
+      uris: https://adoptium.jfrog.io/artifactory/deb
       suites: focal
       components: main
       signed_by: /etc/apt/keyrings/adoptium.asc
