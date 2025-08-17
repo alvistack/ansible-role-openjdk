@@ -49,7 +49,7 @@ _deb822_repository:
     - name: adoptium
       types: deb
       uris: https://adoptium.jfrog.io/artifactory/deb
-      suites: bookworm
+      suites: trixie
       components: main
       signed_by: /etc/apt/keyrings/adoptium.asc
       enabled: true
@@ -66,7 +66,7 @@ _deb822_repository:
     - name: adoptium
       types: deb
       uris: https://adoptium.jfrog.io/artifactory/deb
-      suites: bookworm
+      suites: trixie
       components: main
       signed_by: /etc/apt/keyrings/adoptium.asc
       enabled: true
@@ -83,7 +83,7 @@ _deb822_repository:
     - name: adoptium
       types: deb
       uris: https://adoptium.jfrog.io/artifactory/deb
-      suites: bookworm
+      suites: trixie
       components: main
       signed_by: /etc/apt/keyrings/adoptium.asc
       enabled: true
@@ -100,7 +100,7 @@ _deb822_repository:
     - name: adoptium
       types: deb
       uris: https://adoptium.jfrog.io/artifactory/deb
-      suites: bookworm
+      suites: trixie
       components: main
       signed_by: /etc/apt/keyrings/adoptium.asc
       enabled: true
