@@ -1,0 +1,143 @@
+---
+
+# Copyright 2025 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+_apt_key:
+  "21":
+    - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
+      dest: /etc/apt/keyrings/adoptium.asc
+      checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "17":
+    - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
+      dest: /etc/apt/keyrings/adoptium.asc
+      checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "11":
+    - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
+      dest: /etc/apt/keyrings/adoptium.asc
+      checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "8":
+    - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
+      dest: /etc/apt/keyrings/adoptium.asc
+      checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+
+_deb822_repository:
+  "21":
+    - name: adoptium
+      types: deb
+      uris: https://adoptium.jfrog.io/artifactory/deb
+      suites: trixie
+      components: main
+      signed_by: /etc/apt/keyrings/adoptium.asc
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+  "17":
+    - name: adoptium
+      types: deb
+      uris: https://adoptium.jfrog.io/artifactory/deb
+      suites: trixie
+      components: main
+      signed_by: /etc/apt/keyrings/adoptium.asc
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+  "11":
+    - name: adoptium
+      types: deb
+      uris: https://adoptium.jfrog.io/artifactory/deb
+      suites: trixie
+      components: main
+      signed_by: /etc/apt/keyrings/adoptium.asc
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+  "8":
+    - name: adoptium
+      types: deb
+      uris: https://adoptium.jfrog.io/artifactory/deb
+      suites: trixie
+      components: main
+      signed_by: /etc/apt/keyrings/adoptium.asc
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+
+_apt:
+  "21":
+    - { state: latest, name: temurin-21-jdk }
+    - { state: latest, name: maven }
+    - { state: latest, name: mysql-connector-java }
+    - { state: latest, name: libpostgresql-jdbc-java }
+  "17":
+    - { state: latest, name: temurin-17-jdk }
+    - { state: latest, name: maven }
+    - { state: latest, name: mysql-connector-java }
+    - { state: latest, name: libpostgresql-jdbc-java }
+  "11":
+    - { state: latest, name: temurin-11-jdk }
+    - { state: latest, name: maven }
+    - { state: latest, name: mysql-connector-java }
+    - { state: latest, name: libpostgresql-jdbc-java }
+  "8":
+    - { state: latest, name: temurin-8-jdk }
+    - { state: latest, name: maven }
+    - { state: latest, name: mysql-connector-java }
+    - { state: latest, name: libpostgresql-jdbc-java }
+
+_openjdk_home:
+  "21": /usr/lib/jvm/temurin-21-jdk-amd64
+  "17": /usr/lib/jvm/temurin-17-jdk-amd64
+  "11": /usr/lib/jvm/temurin-11-jdk-amd64
+  "8": /usr/lib/jvm/temurin-8-jdk-amd64
