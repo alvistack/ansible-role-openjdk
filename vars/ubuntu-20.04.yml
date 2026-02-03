@@ -19,28 +19,28 @@ _apt_key:
     - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
+    - url: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "17":
     - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
+    - url: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "11":
     - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
+    - url: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "8":
     - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
       checksum: "sha256:a46d5d3ab75c3c86dddf1bfd2957a067a24b1c6b2d2ed2bc69294bf970c5160b"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
+    - url: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
 
@@ -56,7 +56,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
+      uris: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -73,7 +73,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
+      uris: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -90,7 +90,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
+      uris: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -107,7 +107,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
+      uris: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
