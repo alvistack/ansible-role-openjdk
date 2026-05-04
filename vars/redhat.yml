@@ -130,7 +130,7 @@ _yum_repository:
       gpgkey: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       state: present
 
-_yum:
+_dnf:
   "21":
     - { state: latest, name: temurin-21-jdk }
     - { state: latest, name: maven }
