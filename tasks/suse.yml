@@ -20,9 +20,11 @@
     key: "{{ item.key }}"
     fingerprint: "{{ item.fingerprint }}"
     state: "{{ item.state }}"
-  loop: "{{ _rpm_key[openjdk_release] }}"
+  loop: "{{ _rpm_key }}"
   register: result
   until: result is succeeded
+  tags:
+    - _rpm_key
 
 - name: yum-config-manager --add-repo
   ansible.builtin.yum_repository:
@@ -37,7 +39,7 @@
     gpgkey: "{{ item.gpgkey }}"
     state: "{{ item.state }}"
     reposdir: "{{ item.reposdir | default('/etc/zypp/repos.d') }}"
-  loop: "{{ _yum_repository[openjdk_release] }}"
+  loop: "{{ _yum_repository }}"
 
 - name: zypper install
   vars:
@@ -46,6 +48,8 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
     force_resolution: true
-  loop: "{{ _zypper[openjdk_release] }}"
+  loop: "{{ _zypper }}"
   register: result
   until: result is succeeded
+  tags:
+    - _zypper

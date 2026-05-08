@@ -14,7 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt_key:
+_apt_key: "{{ __apt_key[openjdk_release] }}"
+__apt_key:
   "21":
     - url: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       dest: /etc/apt/keyrings/adoptium.asc
@@ -44,7 +45,8 @@ _apt_key:
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
 
-_deb822_repository:
+_deb822_repository: "{{ __deb822_repository[openjdk_release] }}"
+__deb822_repository:
   "21":
     - name: adoptium
       types: deb
@@ -114,7 +116,8 @@ _deb822_repository:
       enabled: true
       state: present
 
-_apt:
+_apt: "{{ __apt[openjdk_release] }}"
+__apt:
   "21":
     - { state: latest, name: temurin-21-jdk }
     - { state: latest, name: maven }
@@ -136,7 +139,8 @@ _apt:
     - { state: latest, name: mysql-connector-java }
     - { state: latest, name: libpostgresql-jdbc-java }
 
-_openjdk_home:
+_openjdk_home: "{{ __openjdk_home[openjdk_release] }}"
+__openjdk_home:
   "21": /usr/lib/jvm/temurin-21-jdk-amd64
   "17": /usr/lib/jvm/temurin-17-jdk-amd64
   "11": /usr/lib/jvm/temurin-11-jdk-amd64

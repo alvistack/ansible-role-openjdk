@@ -33,9 +33,11 @@
     checksum: "{{ item.checksum }}"
     mode: "{{ item.mode | default('0644') }}"
     timeout: 300
-  loop: "{{ _apt_key[openjdk_release] }}"
+  loop: "{{ _apt_key }}"
   register: result
   until: result is succeeded
+  tags:
+    - _apt_key
 
 - name: apt-add-repository
   ansible.builtin.deb822_repository:
@@ -48,9 +50,11 @@
     enabled: "{{ item.enabled }}"
     state: "{{ item.state }}"
     architectures: "{{ item.architectures | default(None) or omit }}"
-  loop: "{{ _deb822_repository[openjdk_release] }}"
+  loop: "{{ _deb822_repository }}"
   register: result
   until: result is succeeded
+  tags:
+    - _deb822_repository
 
 - name: apt-get update
   ansible.builtin.apt:
@@ -61,6 +65,8 @@
   ansible.builtin.apt:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ _apt[openjdk_release] }}"
+  loop: "{{ _apt }}"
   register: result
   until: result is succeeded
+  tags:
+    - _apt
