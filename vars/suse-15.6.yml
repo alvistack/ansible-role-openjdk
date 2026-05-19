@@ -14,7 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_rpm_key:
+_rpm_key: "{{ __rpm_key[openjdk_release] }}"
+__rpm_key:
   "21":
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.6/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
@@ -44,7 +45,8 @@ _rpm_key:
       fingerprint: 3B04D753C9050D9A5D343F39843C48A565F8F04B
       state: present
 
-_yum_repository:
+_yum_repository: "{{ __yum_repository[openjdk_release] }}"
+__yum_repository:
   "21":
     - file: home_alvistack
       name: home_alvistack
@@ -130,7 +132,8 @@ _yum_repository:
       gpgkey: https://adoptium.jfrog.io/artifactory/api/gpg/key/public
       state: present
 
-_zypper:
+_zypper: "{{ __zypper[openjdk_release] }}"
+__zypper:
   "21":
     - { state: latest, name: temurin-21-jdk }
     - { state: latest, name: maven }
@@ -152,7 +155,8 @@ _zypper:
     - { state: latest, name: mysql-connector-java }
     - { state: latest, name: postgresql-jdbc }
 
-_openjdk_home:
+_openjdk_home: "{{ __openjdk_home[openjdk_release] }}"
+__openjdk_home:
   "21": /usr/lib64/jvm/temurin-21-jdk
   "17": /usr/lib64/jvm/temurin-17-jdk
   "11": /usr/lib64/jvm/temurin-11-jdk

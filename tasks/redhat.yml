@@ -18,9 +18,11 @@
     key: "{{ item.key }}"
     fingerprint: "{{ item.fingerprint }}"
     state: "{{ item.state }}"
-  loop: "{{ _rpm_key[openjdk_release] }}"
+  loop: "{{ _rpm_key }}"
   register: result
   until: result is succeeded
+  tags:
+    - _rpm_key
 
 - name: yum-config-manager --add-repo
   ansible.builtin.yum_repository:
@@ -34,12 +36,14 @@
     gpgcheck: "{{ item.gpgcheck }}"
     gpgkey: "{{ item.gpgkey }}"
     state: "{{ item.state }}"
-  loop: "{{ _yum_repository[openjdk_release] }}"
+  loop: "{{ _yum_repository }}"
 
-- name: yum install
+- name: dnf install
   ansible.builtin.dnf:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ _yum[openjdk_release] }}"
+  loop: "{{ _dnf }}"
   register: result
   until: result is succeeded
+  tags:
+    - _dnf
